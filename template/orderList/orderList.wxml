@@ -1,0 +1,42 @@
+<template name="orderlist">
+
+
+    <!-- <view class="h24 spacing-bg"></view> -->
+
+    <view class=" fs30 text-333">
+        <view class="bold cell-padding corporate-name border-bottom flex">
+            <text>{{shop_name}}</text>
+            <text class="fs24">共 {{totle_num}} 件</text>
+        </view>
+
+        <block wx:for="{{skus}}" wx:key="*this">
+            <view class='flex  goods-info border-bottom'>
+                <image src='{{item.goods_img_url}}'></image>
+                <view class='goods-info-text'>
+                    <view class="ellipsis fs28">{{item.sku_name}}</view>
+                    <view class='goods-tag'>
+                            <view class="text-999 mgr-40">
+                                {{item.sale_props_str}}
+                            </view>
+                            <view class="text-999 mgr-40">
+                                型号:{{item.sku_sn}}
+                            </view>
+
+                    </view>
+
+                    <view class="flex">
+                        <text class='bold fs28 mgr-56 text-theme'> ￥{{item.totle}}</text>
+                        <text class="text-999">×{{item.number}}</text>
+                    </view>
+                </view>
+
+            </view>
+        </block>
+
+    </view>
+
+
+
+   
+
+</template>

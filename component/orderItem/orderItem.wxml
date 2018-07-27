@@ -1,0 +1,94 @@
+<template name="orderItem">
+
+    <view class="">
+        <view class="h24 spacing-bg"></view>
+
+
+        <navigator open-type='navigate' url="../orderDetail/orderDetails?status={{status}}&orderid={{id}}" class="cell-padding corporate-name">
+            <view class='fs30'>{{shop_name}}
+                <text class='iconfont icon-jiantou fs28'></text>
+            </view>
+            <!--待审核  -->
+            <view wx:if="{{status === 1}}" class="text-theme">
+                等待审核
+            </view>
+            <!-- 带付款 -->
+            <view wx:elif="{{status === 2}}" class="text-theme">
+                待付款
+            </view>
+            <!--待发货  -->
+            <view wx:elif="{{status === 3}}" class="text-theme">
+                待发货
+            </view>
+            <!--已完成  -->
+            <view wx:elif="{{status === 4}}" class="text-999">
+                交易成功
+            </view>
+            <!--已取消  -->
+             <view wx:elif="{{is_delete === 1}}" class="text-999">
+                已取消
+            </view>
+        </navigator>
+
+        <!-- <view class='flex  goods-info'>
+            <image src='http://placeholder.qiniudn.com/170x170/cbced1/218edb/' style='display:block;width:170rpx;height:170rpx;'></image>
+            <view class='goods-info-text'>
+                <view class="ellipsis fs28">压边PU 皮牛纹 芳面0.纹面0.99mm纹 芳面0.纹面0.99mm纹 芳面0.纹面0.99mmm</view>
+                <view class='goods-tag'>
+                    <view>压变彩云</view>
+                    <view>压变彩士云</view>
+                    <view>压变彩云</view>
+                </view>
+
+                <view>
+                    <text class='bold fs28 mgr-20'>总额： ￥115.0</text>
+                    <text>20码</text>
+                </view>
+            </view>
+
+        </view> -->
+
+        <view class="goods-list">
+            <scroll-view scroll-x>
+                <block wx:for="{{goods}}" wx:key="*this">
+                    <image src="{{item.goods_img_url}}"></image>
+                </block>
+            </scroll-view>
+
+        </view>
+
+        <view class="goods-pay-line cell-padding">
+
+            <view>
+                <text class="fs26 bold-600">{{'共' + order_totle_num + '件'}} </text>
+                <!-- <text class="">在线支付</text>
+                <text class="">在线支付</text> -->
+            </view>
+
+            <view wx:if="{{status == 3 || status == 4 || is_delete === 1}}">
+                <text class="fs26 bold-600">实付款： </text>
+                <text class="fs26 bold-600">{{'￥'+order_amount}}</text>
+            </view>
+
+             <view wx:if="{{status === 1 || status === 2}}">
+                <text class="fs26 bold-600">需付款</text>
+                <text class="fs30 bold-600">{{'￥'+order_amount}}</text>
+            </view>
+           
+
+        </view>
+
+        <view class="flex goods-action border-top">
+       
+            <view bindtap='cancelOrder' data-id="{{id}}" wx:if="{{status === 1}}">取消订单</view>
+            <view bindtap='cancelOrder' data-id="{{id}}" wx:if="{{status === 2}}">取消订单</view>
+            <view bindtap='payOrder' data-id="{{id}}" data-sn="{{order_sn}}" data-amount="{{order_amount}}" class="text-theme border-theme" wx:if="{{status === 2}}">去支付</view>
+            <view bindtap='ReceivingConfirm' data-id="{{id}}" wx:if="{{status === 3}}">确认收货</view>
+            <view class="visibility-hidden" bindtap='deleteOrder' data-id="{{id}}" wx:if="{{status === 4}}">删除订单</view>
+           
+        </view>
+
+
+    </view>
+
+</template>

@@ -1,0 +1,72 @@
+<view class="text-center no-address fs30" wx:if="{{isEmpty}}">
+
+    <view>
+        <text style="font-size: 220rpx; color: #DFDFDF;" class="iconfont icon-genggaishouhuodizhi text-gray"></text>
+    </view>
+
+    <view class="no-address-text text-gray">暂无收货地址</view>
+
+    <view class="text-999">您可以新增地址已方便收货</view>
+
+</view>
+
+<!--有地址  -->
+<view class="fs28" wx:if="{{!isEmpty}}">
+
+    <block wx:for="{{addressList}}" wx:key="*this">
+
+        <view class="address-item relative">
+
+            <!-- <view class="mgr-20" hidden="{{true}}">
+                <checkbox></checkbox>
+            </view> -->
+            <image hidden='{{!item.is_default}}' src="https://m.yidap.com/assets/imgs/order_address_icon_1.png" style="position:absolute;left:0;width:40rpx;height:40rpx;"></image>
+
+            <view class="address-item-center border-bottom">
+
+                <view class="bold " style="line-height:78rpx;">
+                    <text class="mgr-14 fs36">{{item.consignee}}</text>
+                    <text>{{item.mobile}}</text>
+                </view>
+
+                <view class="ellipsis-line3 text-666">
+                    <text hidden='{{!item.is_default}}' class="text-theme">[选中地址]</text>
+                    <text> {{item.city_str}} </text>
+                    <text>{{item.address}}</text>
+                </view>
+
+            </view>
+            <view class="flex h80 text-666 lh80">
+                <view data-id="{{item.id}}" data-index="{{index}}" bindtap='setDefault'>
+
+                    <text hidden='{{item.is_default == 0}}' class="iconfont icon-dui fs40 pdr-20 text-theme"></text>
+                    <text hidden='{{item.is_default == 1}}' class="iconfont icon-yuan fs40 pdr-20 text-eb"></text>
+                    <text>设为选中</text>
+
+                </view>
+
+                <view class="flex" >
+                    <view bindtap='edit' data-id="{{item.id}}" data-index="{{index}}" class="mgr-30">
+                        <text class="iconfont icon-bianji mgr-16 fs30"></text>
+                        <text>编辑</text>
+                    </view>
+                    <view bindtap='del' data-id="{{item.id}}" data-index="{{index}}">
+                        <text class="iconfont icon-shanchu mgr-16 fs30"></text>
+                        <text>删除</text>
+                    </view>
+                </view>
+
+            </view>
+
+         
+
+        </view>
+
+    </block>
+
+</view>
+
+
+<navigator open-type='navigate' url="../newAddress/newAddress?type=new" class="bottom-fixed text-center text-white h100 lh100 fs32">
+    + 新建收货地址
+</navigator>

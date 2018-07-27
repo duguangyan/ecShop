@@ -1,0 +1,8 @@
+<view wx:if="{{modalShow}}" class="c-loading-more" >
+
+    <view class="c-loading-box">
+        <text class="c-loading-icon"></text>
+        <text class="c-loading-text">{{modalText}}</text>
+    </view>
+    
+</view>

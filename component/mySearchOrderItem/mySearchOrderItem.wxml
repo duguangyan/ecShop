@@ -1,0 +1,20 @@
+<template name="mySearchOrderItem">
+    <view class="pd-20">
+
+        <view class="fs28 ellipsis-line2">
+            {{field_desc}}
+        </view>
+
+        <view class="flex text-666 fs26 lh60">
+            <view class="lh60">物料类型：{{cname || '无'}}</view>
+            <view wx:if="{{sampling_type == 1}}">找料方式: 图片方式</view>
+            <view wx:elif="{{sampling_type == 2}}">找料方式: 上门取样</view>
+            <view wx:elif="{{sampling_type == 3}}">找料方式: 寄送样品</view>
+        </view>
+
+        <view class="flex text-666 fs26">
+            <view class="">价格范围： {{price_range || '无'}}</view>
+        </view>
+
+    </view>
+</template>

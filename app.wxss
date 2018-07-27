@@ -1,0 +1,66 @@
+/**app.wxss**/
+
+/* .container {
+
+} */
+
+/*iconfont 引用  */
+@import "./style/iconfont";
+@import "./style/base";
+@import "./style/weui";
+
+
+page {
+    width: 100%;
+    min-height: 100%;
+    font-family: "PingFang SC";
+    font-size: 24rpx;
+}
+
+.bg {
+    background-color: #F2F2F2;
+}
+
+/*通用 滑动  */
+.scroll-box {
+    display: block;
+    width: 100%;
+}
+
+/*间隔块 通用  */
+
+.spacing-view {
+    background: #F2F2F2;
+    height: 14rpx;
+}
+
+
+.spacing-bg {
+    background: #F2F2F2;
+}
+
+
+/*底部固定  */
+
+.bottom-fixed {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 999;
+    background: #C81A29;
+}
+
+/* CSS3图片水平垂直居中 [图片父容器必须有高度] */
+.img-center-v image{
+   position: relative;
+   transform: translate(-50%, -50%);
+   top: 50%;
+   left: 50%;
+ }
+
+
+.width-166 {
+    width: 166rpx;
+    text-align-last: justify;
+}

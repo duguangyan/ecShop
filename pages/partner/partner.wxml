@@ -1,0 +1,6 @@
+<view class="text-center partner">
+    <image mode='widthFix' src='https://static.yidap.com/miniapp/partner/partner1.png'></image>
+    <image mode='widthFix' src='https://static.yidap.com/miniapp/partner/partner2.png'></image>
+    <image mode='widthFix' lazy-load='true' src='https://static.yidap.com/miniapp/partner/partner3.png'></image>
+    <image mode='widthFix' lazy-load='true' src='https://static.yidap.com/miniapp/partner/partner4.png'></image>
+</view>

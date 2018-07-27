@@ -1,0 +1,83 @@
+page {
+    background-color: #c81a29;
+}
+
+.timer-box {
+    display: flex;
+    align-items: center;
+    width: 210rpx;
+    height: 42rpx;
+    margin: 0 20rpx;
+    text-align: center;
+    line-height: 42rpx;
+    color: #fff;
+}
+
+/*奇数  */
+
+.timer-box view:nth-of-type(2n+1) {
+    width: 42rpx;
+    height: 42rpx;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.timer-box view:nth-of-type(2n) {
+    width: 28rpx;
+    height: 42rpx;
+    background: transparent;
+    font-size: 20rpx;
+}
+
+/*抢购按钮  */
+
+.flash-sale-btn {
+    width: 160rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    text-align: center;
+    border-radius: 10rpx;
+    font-size: 30rpx;
+    background: linear-gradient(90deg, #ffff81 0%, #ffd23b 80%);
+}
+
+.flash-sale-out-btn {
+    width: 160rpx;
+    height: 70rpx;
+    margin: 0 auto 10rpx;
+    line-height: 70rpx;
+    text-align: center;
+    border-radius: 10rpx;
+    font-size: 24rpx;
+    color: #2b2b2b;
+    background: linear-gradient(0deg, #DEDEDE 0%, #CFCFCF 50%, #DEDEDE 100%);
+}
+
+/*收货地址  */
+
+.address-box {
+    width: 600rpx;
+    min-height: 160rpx;
+    margin: 44rpx auto 44rpx;
+    border: 2rpx #e8880f solid;
+    border-radius: 4rpx;
+    position: relative;
+}
+
+.address-box .address-title {
+    position: absolute;
+    left: 16rpx;
+    top: -20rpx;
+    padding: 0 10rpx;
+    border-radius: 10rpx;
+    font-size: 24rpx;
+    background-color: #c81a29;
+}
+
+.address-box .address-icon {
+    color: #ffd23b;
+}
+
+.address-box-main {
+    padding: 22rpx 28rpx 16rpx;
+    align-items: flex-start;
+}

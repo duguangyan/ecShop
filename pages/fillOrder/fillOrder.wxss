@@ -1,0 +1,91 @@
+page {
+    background: #f2f2f2;
+}
+
+.container {
+    background: #fff;
+}
+
+.order-address-box {
+    min-height: 120rpx;
+}
+
+.order-address-detail {
+    /* align-items: center; */
+    padding: 0 20rpx;
+}
+
+.order-address-info {
+    flex: 1;
+    padding-bottom: 24rpx;
+}
+
+/*没有地址样式  */
+
+.order-address-box .no-address {
+    height: 120rpx;
+    text-align: center;
+}
+
+.order-address-box .no-address text:first-child {
+    flex: 1;
+    font-size: 30rpx;
+    font-weight: 500;
+}
+
+.order-provider {
+    height: 86rpx;
+    line-height: 86rpx;
+    text-indent: 8rpx;
+}
+
+.order-list {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 24rpx 28rpx;
+}
+
+.order-list scroll-view {
+    width: 520rpx;
+    white-space: nowrap;
+}
+
+.order-list image {
+    height: 110rpx;
+    width: 110rpx;
+    margin-right: 24rpx;
+    border-radius: 10rpx;
+}
+
+.nav-box {
+    line-height: 80rpx;
+}
+
+.nav-box text {
+    vertical-align: middle;
+}
+
+.nav-box image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 10rpx;
+    vertical-align: middle;
+}
+
+.order-price-totle {
+    padding: 32rpx 50rpx 32rpx 20rpx;
+}
+
+.submit-order {
+    justify-content: flex-end;
+    height: 114rpx;
+    background: #fff;
+}
+
+.submit-order .submit-btn {
+    width: 220rpx;
+    line-height: 114rpx;
+    text-align: center;
+    font-size: 34rpx;
+    color: #fff;
+}

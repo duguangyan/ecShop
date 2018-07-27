@@ -1,0 +1,378 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.0.2",
+	"appid": "wx163741a921661fe9",
+	"projectname": "%E4%B8%80%E5%A4%A7%E6%89%B9%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE6.12",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "搜索页面",
+					"pathName": "pages/search/search",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": 1,
+					"name": "详情页",
+					"pathName": "pages/goodsDetail/goodsDetail",
+					"query": "id=328",
+					"scene": "1001"
+				},
+				{
+					"id": 2,
+					"name": "列表页",
+					"pathName": "pages/goodsList/goodsList",
+					"query": "search=",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "筛选 选项页",
+					"pathName": "pages/filterOptions/filterOptions",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": 4,
+					"name": "商品详情页",
+					"pathName": "pages/goodsDetail/goodsDetail",
+					"query": "id=531",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "添加商品页",
+					"pathName": "pages/addGoods/addGoods",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "订单详情",
+					"pathName": "pages/orderDetail/orderDetails",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "我的订单",
+					"pathName": "pages/myOrder/myOrder",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": 8,
+					"name": "填写订单",
+					"pathName": "pages/fillOrder/fillOrder",
+					"query": "orderid=247,245,246,244,243",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "产品选购",
+					"pathName": "pages/selectGoods/selectGoods",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": 10,
+					"name": "购物车",
+					"pathName": "pages/shoppingCart/shoppingCart",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": 11,
+					"name": "登录",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": 12,
+					"name": "重置密码",
+					"pathName": "pages/resetPassword/resetPassword",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "发票信息",
+					"pathName": "pages/invoiceInfo/invoiceInfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "收货地址",
+					"pathName": "pages/consigneeAddress/consigneeAddress",
+					"query": ""
+				},
+				{
+					"id": 15,
+					"name": "新建收货地址",
+					"pathName": "pages/newAddress/newAddress",
+					"query": "type=edit&id=4",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "商品图片信息详情",
+					"pathName": "pages/goodsInfo/goodsInfo",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "注册 ",
+					"pathName": "pages/register/register",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "webview网页",
+					"pathName": "pages/webView/webView",
+					"query": "id=2",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/memberCenter/memberCenter",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "账号管理",
+					"pathName": "pages/accountManagement/accountManagement",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "个人信息",
+					"pathName": "pages/personalDetails/personalDetails",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": 22,
+					"name": "物品清单",
+					"pathName": "pages/orderList/orderList",
+					"query": "index=1"
+				},
+				{
+					"id": -1,
+					"name": "关联账号",
+					"pathName": "pages/associatedAccount/associatedAccount",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": 24,
+					"name": "在线支付",
+					"pathName": "pages/onlinePayment/onlinePayment",
+					"query": "sn=1232378324&amount=13.54",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "订单提交成功页面",
+					"pathName": "pages/orderSuccess/orderSuccess",
+					"query": "sn=234234231",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "快找页面",
+					"pathName": "pages/quickFind/quickFind",
+					"query": "sn=234234231",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "路通物流",
+					"pathName": "pages/logistics/logistics",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "合伙人页面",
+					"pathName": "pages/partner/partner",
+					"query": ""
+				},
+				{
+					"id": 29,
+					"name": "我的找料",
+					"pathName": "pages/mySearchOrder/mySearchOrder",
+					"query": "id=1",
+					"scene": "1001"
+				},
+				{
+					"id": 30,
+					"name": "小鹿快找",
+					"pathName": "pages/xiaoluSearch/xiaoluSearch",
+					"query": "sn=15233321414990",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "快找确认订单",
+					"pathName": "pages/firmOrder/firmOrder",
+					"query": "id=1",
+					"scene": "1001"
+				},
+				{
+					"id": 32,
+					"name": "快找支付成功",
+					"pathName": "pages/payFindSuccess/payFindSuccess",
+					"query": "sn=15233384182890&membertype=member",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "找料订单详情",
+					"pathName": "pages/findOrderDetail/findOrderDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的找料列表",
+					"pathName": "pages/myFindOrder/myFindOrder",
+					"query": "status=0"
+				},
+				{
+					"id": 35,
+					"name": "套餐列表",
+					"pathName": "pages/myPackage/myPackage",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "套餐详情",
+					"pathName": "pages/myPackageDetail/myPackageDetail",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "充值套餐",
+					"pathName": "pages/rechargePackage/rechargePackage",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "确认套餐订单",
+					"pathName": "pages/firmPackageOrder/firmPackageOrder",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": 39,
+					"name": "套餐订单支付成功",
+					"pathName": "pages/payPackageSuccess/payPackageSuccess",
+					"query": "sn=246518733031715922",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "秒杀活动",
+					"pathName": "pages/secondKillingActivity/secondKillingActivity",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": 41,
+					"name": "首页",
+					"pathName": "pages/index/index",
+					"query": "redirect=salesPromotion",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "会员优惠套餐",
+					"pathName": "pages/packageIntroduction/packageIntroduction",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "意见反馈",
+					"pathName": "pages/feedback/feedback",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "地图测试",
+					"pathName": "pages/map/map",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "快找任务结算",
+					"pathName": "pages/taskSettlement/taskSettlement",
+					"query": "id=328",
+					"scene": "1001"
+				},
+				{
+					"id": 46,
+					"name": "限量限购活动页面(每周限量)",
+					"pathName": "pages/limitedPurchase/limitedPurchase",
+					"query": "id=328",
+					"scene": "1001"
+				},
+				{
+					"id": 47,
+					"name": "限购活动 第三版 3333（每天限量）",
+					"pathName": "pages/limitedPurchase3/limitedPurchase3",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "促销活动6.12",
+					"pathName": "pages/salesPromotion/salesPromotion",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "活动模式44444，最低起购",
+					"pathName": "pages/limitedPurchase4/limitedPurchase4",
+					"query": ""
+				}
+			]
+		}
+	}
+}

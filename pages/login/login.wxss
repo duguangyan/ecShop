@@ -1,0 +1,31 @@
+.container {
+    
+}
+
+.login-box {
+    padding: 90rpx 40rpx 0 40rpx;
+}
+
+.input-box {
+    display: flex;
+    height: 100rpx;
+    align-items: center;
+}
+
+.input-box input {
+    height: 60rpx;
+   font-size: 30rpx;
+   width: 500rpx;
+}
+
+.login-btn {
+    margin: 60rpx 0;
+    background: #CACACA;
+    color:#FFF;
+}
+
+.login-btn-active {
+    background: #C81A29;
+}
+
+

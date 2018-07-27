@@ -1,0 +1,83 @@
+.classify-catetory-list {
+    padding-bottom: 114rpx;
+}
+
+.filter-box .filter-option-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15rpx 0 32rpx;
+    font-weight: 600;
+    font-size: 34rpx;
+    line-height: 70rpx;
+    background: #f4f4f4;
+}
+
+.filter-option-title .view-more {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.filter-box .filter-option-list {
+    padding: 16rpx 22rpx 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.filter-box .filter-option-list .filter-option-item {
+    box-sizing: border-box;
+    width: 170rpx;
+    height: 64rpx;
+    margin-bottom: 18rpx;
+    margin-right: 6rpx;
+    border: 2rpx #c6c6c6 solid;
+    border-radius: 32rpx;
+    color: #1e1e1e;
+    text-align: center;
+    line-height: 64rpx;
+}
+
+.filter-box .filter-option-list .filter-option-item.selected {
+    background: #C81A29;
+    color: #fff;
+    border: 0;
+}
+
+/*底部确框  */
+
+.filter-confirmation-box {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    height: 114rpx;
+    width: 100%;
+    align-items: center;
+    padding-left: 32rpx;
+    background: #FFF;
+    border-top: 2rpx #c6c6c6 solid;
+    border-radius: 10rpx;
+    text-align: center;
+    font-size: 38rpx;
+    line-height: 80rpx;
+}
+
+.filter-confirmation-box .filter-reset {
+    width: 240rpx;
+    height: 80rpx;
+    margin-right: 32rpx;
+    box-sizing: border-box;
+    border: 2rpx #C81A29 solid;
+    color:#C81A29;
+    border-radius: 10rpx;
+}
+
+.filter-confirmation-box .filter-confirm {
+    width: 414rpx;
+    height: 80rpx;
+    background: #C81A29;
+    color:#FFF;
+    border-radius: 10rpx;
+
+}

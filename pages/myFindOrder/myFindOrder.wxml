@@ -1,0 +1,65 @@
+<import src="../../component/mySearchOrderItem/mySearchOrderItem.wxml" />
+
+<!--加载组件  -->
+<mainloading modal-show="{{modalShow}}" />
+
+
+<view class="navbar">
+    <block wx:for="{{tab}}" wx:key="*this">
+        <view class="fs30" bindtap='selectTab' data-id="{{item.id}}">
+            <text class="{{ item.id == status ? 'active' : ''}}">{{item.name}}</text>
+        </view>
+    </block>
+</view>
+
+
+<view class="order-list fs28">
+    <!-- <scroll-view scroll-y scroll-top="{{scrollTop}}" scroll-with-animation="true" style="height:auto;width:100%;" class="order-item-scroll"></scroll-view> -->
+
+        <view >
+            <block wx:for="{{orderList}}" wx:key="{{i}}">
+                <view class="bg h20"></view>
+                <navigator open-type='navigate' url="../findOrderDetail/findOrderDetail?status={{item.status}}&orderid={{item.id}}" class="border-bottom flex lh90 cell-padding">
+                    <view>
+                        <text>订单编号: </text><text>{{item.id}}</text>
+                    </view>
+                    <text wx:if="{{item.status == 1}}" class="text-theme">待支付</text>
+                    <text wx:elif="{{item.status == 2}}" class="text-theme">待审核</text>
+                    <text wx:elif="{{item.status == 3}}" class="text-theme">找料中</text>
+                    <text wx:elif="{{item.status == 4}}" class="text-theme">已完成</text>
+                    <text wx:elif="{{item.status == 5}}" class="text-theme">待分配</text>
+                </navigator>
+                <template is="{{'mySearchOrderItem'}}" data="{{...item}}" />
+                <view wx:if="{{item.status == 1}}" class="border-top pd-20 flex flex-end">
+                    <view bindtap='payOrder' data-id='{{item.id}}' data-amount="{{item.pay_fee}}" class="pay-btn">去支付</view>
+                </view>
+            </block>
+        </view>
+
+        <view wx:if="{{noOrder}}" class="text-center">
+            <image style="width:114rpx;height:144rpx;padding:86rpx 0 66rpx;" src="../../images/no_order.png"></image>
+            <view>
+                <text class="text-999 fs34">您还没有相关订单</text>
+            </view>
+        </view>
+
+
+        <!-- <view hidden="{{a === 0}}">
+        <template is="{{'orderItem'}}" data="{{...item}}" />
+        <template is="{{'orderItem'}}" data="{{...item}}" />
+        <template is="{{'orderItem'}}" data="{{...item}}" />
+        <template is="{{'orderItem'}}" data="{{...item}}" />
+
+    </view>
+
+    <view hidden="{{a === 1}}">
+        <template is="{{'orderItem'}}" data="{{...item}}" />
+        <template is="{{'orderItem'}}" data="{{...item}}" />
+    </view> -->
+
+
+        <loading modal-show="{{loading}}" />
+        <loadcomplete modal-show="{{loadComplete}}" />
+
+    
+</view>

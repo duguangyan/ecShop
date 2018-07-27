@@ -1,0 +1,94 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/search/search",
+    "pages/shoppingCart/shoppingCart",
+    "pages/shopping/shopping",
+    "pages/member/member",
+    "pages/memberCenter/memberCenter",
+    "pages/goodsDetail/goodsDetail",
+    "pages/goodsList/goodsList",
+    "pages/logs/logs",
+    "pages/filterOptions/filterOptions",
+    "pages/addGoods/addGoods",
+    "pages/luSou/luSou",
+    "pages/orderDetail/orderDetails",
+    "pages/myOrder/myOrder",
+    "pages/fillOrder/fillOrder",
+    "pages/selectGoods/selectGoods",
+    "pages/login/login",
+    "pages/resetPassword/resetPassword",
+    "pages/invoiceInfo/invoiceInfo",
+    "pages/consigneeAddress/consigneeAddress",
+    "pages/newAddress/newAddress",
+    "pages/goodsInfo/goodsInfo",
+    "pages/register/register",
+    "pages/webView/webView",
+    "pages/accountManagement/accountManagement",
+    "pages/personalDetails/personalDetails",
+    "pages/orderList/orderList",
+    "pages/associatedAccount/associatedAccount",
+    "pages/onlinePayment/onlinePayment",
+    "pages/paySuccess/paySuccess",
+    "pages/orderSuccess/orderSuccess",
+    "pages/quickFind/quickFind",
+    "pages/logistics/logistics",
+    "pages/luSouTab/luSouTab",
+    "pages/partner/partner",
+    "pages/mySearchOrder/mySearchOrder",
+    "pages/xiaoluSearch/xiaoluSearch",
+    "pages/firmOrder/firmOrder",
+    "pages/payFindSuccess/payFindSuccess",
+    "pages/myFindOrder/myFindOrder",
+    "pages/findOrderDetail/findOrderDetail",
+    "pages/myPackage/myPackage",
+    "pages/myPackageDetail/myPackageDetail",
+    "pages/rechargePackage/rechargePackage",
+    "pages/firmPackageOrder/firmPackageOrder",
+    "pages/payPackageSuccess/payPackageSuccess",
+    "pages/secondKillingActivity/secondKillingActivity",
+    "pages/packageIntroduction/packageIntroduction",
+    "pages/feedback/feedback",
+    "pages/map/map",
+    "pages/taskSettlement/taskSettlement",
+    "pages/limitedPurchase/limitedPurchase",
+    "pages/limitedPurchase3/limitedPurchase3",
+    "pages/limitedPurchase4/limitedPurchase4",
+    "pages/salesPromotion/salesPromotion"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#C81A29",
+    "navigationBarTitleText": "一大批",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#C81A29",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/icons/home_page.png",
+        "selectedIconPath": "images/icons/home_page1.png"
+      },
+      {
+        "pagePath": "pages/shopping/shopping",
+        "text": "购物车",
+        "iconPath": "images/icons/shopping_cart.png",
+        "selectedIconPath": "images/icons/shopping_cart1.png"
+      },
+      {
+        "pagePath": "pages/memberCenter/memberCenter",
+        "text": "个人中心",
+        "iconPath": "images/icons/member_center.png",
+        "selectedIconPath": "images/icons/member_center1.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 20000,
+    "downloadFile": 20000
+  }
+}

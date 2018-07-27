@@ -1,0 +1,105 @@
+<!--搜索信息  -->
+<view class="pd-20">
+
+    <view class="fs28 ellipsis-line2">
+        {{desc}}
+    </view>
+
+    <view class="flex text-666 fs26 lh60">
+        <view class="lh60">物料分类：{{cname || '无'}}</view>
+        <view wx:if="{{type == 1}}">找料方式: 图片方式</view>
+        <view wx:elif="{{type == 2}}">找料方式: 上门取样</view>
+        <view wx:elif="{{type == 3}}">找料方式: 寄送样品</view>
+    </view>
+
+    <view class="flex text-666 fs26">
+        <view class="">价格范围： {{range || '无'}}</view>
+    </view>
+
+</view>
+
+<!-- <view class="bg h20"></view> -->
+
+<!--上传图片  -->
+<view class="flex uploadbox flex-start border-top" wx:if="{{type == 1}}">
+
+    <block wx:for="{{imgArr}}" wx:key="{{i}}">
+        <view>
+            <image src="{{item}}"></image>
+        </view>
+    </block>
+
+</view>
+
+<!--寄样地址  -->
+
+<view class="fs30 pd-20 border-top text-666" wx:if="{{type == 3}}">
+    <view>请将样品寄送到以下位置</view>
+    <view>联系人　： 田先生</view>
+    <view>联系电话：18320985894</view>
+    <view>寄送地址： 广东省广州市花都区镜湖大道南33号财富工业图7号楼2层</view>
+</view>
+
+<!--收货人  -->
+<view class="bg h20"></view>
+
+<view class="cell-padding address flex flex-start">
+
+
+    <view class="flex-1 address-info fs30">
+
+        <view class="flex">
+            <view>
+                <text class="text-666">收货人　： </text>
+                <text>{{defaultAddress.consignee}}</text>
+            </view>
+            <text>{{defaultAddress.mobile}}</text>
+
+        </view>
+
+        <view>
+            <text class="text-666">收获地址：</text>
+            <text>{{defaultAddress.city_str}} {{defaultAddress.address}}</text>
+        </view>
+
+    </view>
+</view>
+
+<view class="bg h20"></view>
+
+<navigator hidden="{{demandPrice == 0}}" open-type='navigate' url="../invoiceInfo/invoiceInfo">
+    <view class="lh80 cell-padding flex text-333 fs30">
+        <view class="">发票信息</view>
+        <view style="">
+            <text>{{invoiceData.inv_payee === '个人' ? '个人' : '公司' }}</text>
+            <text class="iconfont icon-jiantou bold mgl-20 fs24 text-gray"></text>
+        </view>
+    </view>
+</navigator>
+
+<view class="bg h20"></view>
+
+<!--价格展示  -->
+<view class="fs30">
+    <view class="pd-20 border-bottom">
+        <view class="flex lh50">
+            <text>找料费用</text>
+            <text class="fs24">{{demandPrice ? '￥' + demandPrice :demandPrice}}</text>
+        </view>
+        <!-- <view class="flex  lh50">
+            <text>配送费用</text>
+            <text>￥00.00</text>
+        </view> -->
+    </view>
+    <view class="text-right pd-20 border-bottom">
+        <text>实际支付：</text>
+        <text class="text-theme bold">{{demandPrice ? '￥' + demandPrice :demandPrice}}</text>
+    </view>
+</view>
+
+<!-- <view class="bg h20"></view> -->
+<view class="h100"></view>
+
+<view bindtap='submitOrder' hover-class="hover-style" class="bottom-fixed text-center text-white h100 lh100 fs32 {{ hasSubmit ? 'disabled-c' : ''}}">
+    提交订单
+</view>

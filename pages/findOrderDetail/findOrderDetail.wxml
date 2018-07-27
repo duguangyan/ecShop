@@ -1,0 +1,136 @@
+<import src="../../component/mySearchOrderItem/mySearchOrderItem.wxml" />
+<template is="{{'mySearchOrderItem'}}" data="{{...orderData}}" />
+
+
+<!--上传图片  -->
+<view class="flex uploadbox flex-start border-top" wx:if="{{orderData.sampling_type == 1}}">
+
+    <view wx:if='{{orderData.img1_url !== ""}}'>
+        <image src="{{orderData.img1_url}}"></image>
+    </view>
+
+    <view wx:if='{{orderData.img2_url !== ""}}'>
+        <image src="{{orderData.img2_url}}"></image>
+    </view>
+
+    <view wx:if='{{orderData.img3_url !== ""}}'>
+        <image src="{{orderData.img3_url}}"></image>
+    </view>
+
+</view>
+
+<!--寄样地址  -->
+
+<view class="fs30 pd-20 border-top text-666" wx:if="{{orderData.sampling_type == 3}}">
+    <view>请将样品寄送到以下位置</view>
+    <view>联系人　： 田先生</view>
+    <view>联系电话：18320985894</view>
+    <view>寄送地址： 广东省广州市花都区镜湖大道南33号财富工业图7号楼2层</view>
+</view>
+
+<!--收货人  -->
+<view class="bg h20"></view>
+
+<view class="cell-padding address flex flex-start">
+
+
+    <view class="flex-1 address-info fs30">
+
+        <view class="flex">
+
+            <view>
+                <text class="text-666">收货人 　： </text>
+                <text>{{orderData.sampling_linkman}}</text>
+            </view>
+            <text>{{orderData.sampling_number}}</text>
+
+        </view>
+
+        <view>
+            <text class="text-666">收获地址：</text>
+            <text>{{orderData.sampling_address}}</text>
+        </view>
+
+    </view>
+</view>
+
+<view class="bg h20"></view>
+
+<!--订单信息  -->
+<view class="fs28">
+
+    <view class="pd-20 border-bottom lh60">
+        <view class="flex">
+            <view>
+                <text>订单编号： </text>
+                <text>{{orderData.id}} </text>
+            </view>
+            <view class="text-theme">
+                {{orderData.statusvalue}}
+            </view>
+        </view>
+
+        <view class="flex">
+            <view>
+                <text>下单时间：  </text>
+                <text>{{orderData.created_at}} </text>
+            </view>
+        </view>
+
+    </view>
+
+    <view class="border-bottom pd-20" wx:if="{{orderData.pay_method !== '' }}">
+        <text class="text-666">支付方式：  </text>
+        <text>{{orderData.pay_method}} </text>
+    </view>
+
+    <view wx:if="{{orderData}}" class="pd-20">
+        <view>
+            <text>发票类型：  </text>
+            <text>普通电子发票 </text>
+        </view>
+
+        <view>
+            <text>发票抬头：  </text>
+            <text>{{orderData.inv_payee || ''}} </text>
+        </view>
+
+    </view>
+
+    <view class="bg h20"></view>
+
+    <view>
+
+        <view class="pd-20">
+
+            <view class="flex">
+                <text class="text-666">服务费用</text>
+                <text>{{orderData.pay_fee ? '￥' + orderData.pay_fee : ''}}</text>
+            </view>
+            <view class="flex">
+                <text class="text-666">取样费用  </text>
+                <text>￥0.00 </text>
+            </view>
+
+        </view>
+
+        <view class="pd-20 flex flex-end border-top">
+            <text>实际支付价格：</text>
+            <text class="text-theme">{{orderData.pay_fee ? '￥' + orderData.pay_fee : ''}}</text>
+        </view>
+    </view>
+
+    <view class="bg h20"></view>
+    <view class=" h100"></view>
+
+</view>
+
+
+
+
+<view wx:if="{{orderData.status === 1}}" class="bottom-fixed payment-choice">
+
+    <view wx:if="{{orderData.status === 1}}" bindtap='payOrder' data-id="{{orderData.id}}" data-sn="{{orderData.id}}" data-amount="{{orderData.pay_fee}}" class='bold text-theme pay'>去支付</view>
+
+
+</view>

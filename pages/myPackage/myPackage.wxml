@@ -1,0 +1,30 @@
+<view wx:if="{{empty}}" class="text-center">
+    <image style="width:114rpx;height:144rpx;padding:200rpx 0 66rpx;" src="../../images/no_order.png"></image>
+    <view>
+        <text class="text-999 fs34">您还没有订购套餐</text>
+    </view>
+</view>
+
+<view>
+    <!--列表item  -->
+    <navigator open-type='navigate' url="../myPackageDetail/myPackageDetail?order_no={{item.order_no}}" wx:for="{{packageList}}" wx:key="{{i}}" class="pd-20 border-bottom">
+
+        <view class="flex lh60">
+
+            <text class="fs30 bold">{{item.package_name}}</text>
+
+            <text class="text-theme">{{item.pay_price ? '￥' + item.pay_price : ''}}</text>
+
+        </view>
+
+        <view class="flex lh40 text-666">
+
+            <text>下单时间： {{item.updated_at}}</text>
+
+            <text wx:if="{{item.packageData.mounth}}">有效期： {{item.packageData.mounth}} 月</text>
+
+        </view>
+
+    </navigator>
+
+</view>

@@ -1,0 +1,51 @@
+<import src="../../component/orderItem/orderItem.wxml" />
+
+<!--加载组件  -->
+<mainloading modal-show="{{modalShow}}" />
+
+
+<view class="navbar">
+    <block wx:for="{{tab}}" wx:key="*this">
+        <view class="fs30" bindtap='selectTab' data-id="{{item.id}}">
+            <text class="{{ item.id == status ? 'active' : ''}}">{{item.name}}</text>
+        </view>
+    </block>
+</view>
+
+
+<view class="order-list">
+    <!-- <scroll-view scroll-y scroll-top="{{scrollTop}}" scroll-with-animation="true" style="height:auto;width:100%;" class="order-item-scroll"></scroll-view> -->
+
+        <view >
+            <block wx:for="{{orderList}}" wx:key="{{i}}">
+                <template is="{{'orderItem'}}" data="{{...item}}" />
+            </block>
+        </view>
+
+        <view wx:if="{{noOrder}}" class="text-center">
+            <image style="width:114rpx;height:144rpx;padding:86rpx 0 66rpx;" src="../../images/no_order.png"></image>
+            <view>
+                <text class="text-999 fs34">您还没有相关订单</text>
+            </view>
+        </view>
+
+
+        <!-- <view hidden="{{a === 0}}">
+        <template is="{{'orderItem'}}" data="{{...item}}" />
+        <template is="{{'orderItem'}}" data="{{...item}}" />
+        <template is="{{'orderItem'}}" data="{{...item}}" />
+        <template is="{{'orderItem'}}" data="{{...item}}" />
+
+    </view>
+
+    <view hidden="{{a === 1}}">
+        <template is="{{'orderItem'}}" data="{{...item}}" />
+        <template is="{{'orderItem'}}" data="{{...item}}" />
+    </view> -->
+
+
+        <loading modal-show="{{loading}}" />
+        <loadcomplete modal-show="{{loadComplete}}" />
+
+    
+</view>

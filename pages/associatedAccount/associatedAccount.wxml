@@ -1,0 +1,47 @@
+<view class="fs30">
+    <form>
+        <view class="mgt-30 pdl-30 pdr-40 input-box flex">
+
+            <text class="bold mgr-50">手机号</text>
+
+            <input bindinput='mobile' placeholder-class='fs30 text-999' placeholder='请输入11位手机号' maxlength='11' value="{{initialNum}}"></input>
+            <text bindtap='delAccountNum' hidden="{{!isDel}}" class="iconfont icon-chahao fs40 text-999"></text>
+        </view>
+
+        <view class="mgt-30 pdl-30 input-box flex">
+            <text class="bold  mgr-50">验证码</text>
+            <input bindinput='sms' placeholder-class='fs30 text-999' placeholder='请输入验证码' maxlength='4'></input>
+            <view bindtap='getSMS' class="fs26 text-theme {{smsStatus ? 'disabled' : ''}}">{{ smsText ||'获取验证码'}}</view>
+        </view>
+
+
+        <!--设置密码  -->
+        <view hidden='{{isMember}}' class="mgt-30 pdl-30 pdr-40 input-box set-pwd">
+            <text class="bold mgr-50">设置密码</text>
+            <input bindinput='password' password="{{!visiblePWD}}" placeholder-class='fs30 text-999' placeholder='6-20位字母+数字或字符号组合' maxlength='20'></input>
+            <text bindtap='isVisible' class="iconfont {{visiblePWD ? 'icon-yj': 'icon-bukejian'}} fs40 text-999"></text>
+        </view>
+
+        <!--用户协议  -->
+        <view hidden='{{isMember}}' class="service-agreement">
+            <checkbox-group bindchange="isAgree">
+                <label>
+                    <checkbox color="red" value="1" checked="{{agree}}" />
+                    <text class="text-gray">同意</text>
+                </label>
+                <text>《一大批用户协议》</text>
+            </checkbox-group>
+        </view>
+
+        <button bindtap='regSubmit' class="submit-btn bg-theme text-white {{ isMember ? 'submit-btn-member' : ''}}"> {{ isMember ? '' : '注册并'}}关联账号</button>
+
+    </form>
+
+    <!-- <view class="mgl-26 mgt-34">
+        <text class="text-gray">注册遇到问题？</text>
+        <button class="contact-btn" open-type="contact">联系客服</button>
+    </view> -->
+
+     <!-- <button open-type="getUserInfo" bindgetuserinfo="userInfoHandler"> Click me </button>  -->
+
+</view>

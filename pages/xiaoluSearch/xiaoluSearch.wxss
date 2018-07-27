@@ -1,0 +1,67 @@
+.title-bg {
+    background: #f0eff5;
+}
+
+.width-166 {
+    width: 166rpx;
+    text-align-last: justify;
+}
+
+.height-200 {
+    height: 200rpx;
+}
+
+.align-start {
+    align-items: flex-start;
+}
+
+/*上传图片  */
+
+.upload-view {
+    padding: 20rpx 34rpx;
+}
+
+.upload-view image {
+    height: 200rpx;
+    width: 200rpx;
+    background: #f2f2f2;
+}
+
+/*图片北京  */
+.upload-view view:nth-of-type(1) image {
+    background: #f2f2f2 url(https://static.yidap.com/miniapp/upload/upload1.png) no-repeat;
+    background-size:  200rpx 200rpx;
+}
+
+.upload-view view:nth-of-type(2) image {
+    background: #f2f2f2 url(https://static.yidap.com/miniapp/upload/upload2.png);
+    background-size:  200rpx 200rpx;
+}
+
+.upload-view view:nth-of-type(3) image {
+    background: #f2f2f2 url(https://static.yidap.com/miniapp/upload/upload3.png);
+    background-size:  200rpx 200rpx;
+}
+
+
+
+/*收货地址  */
+.address {
+    min-height: 180rpx;
+    padding-right: 40rpx;
+}
+
+
+/*提交按钮  */
+.submit-form {
+    padding: 36rpx 20rpx 100rpx;
+}
+
+.submit-form button {
+    color: #FFF;
+    background: #c81a29;
+}
+
+ .submit-form button::after{
+    border: none;
+} 

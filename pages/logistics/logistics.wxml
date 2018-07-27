@@ -1,0 +1,94 @@
+<view class="text-center">
+    <image src="https://static.yidap.com/miniapp/logistics_banner.png" style='width:100%;height:100%;' mode='widthFix'></image>
+
+
+    <view class="introduce-section relative">
+
+
+        <view class="fs30 bold-600 lh50 relative u-line">鹿通优势</view>
+       
+        <view class="fs24">四大物流优势, 让您更省时省钱省心</view>
+
+
+        <view class="introduce-section-box">
+
+            <view class="introduce-item">
+
+                <view class='introduce-item-img'>
+                    <image src="https://static.yidap.com/miniapp/logistics1.png"></image>
+                </view>
+
+                <view class="introduce-item-title">
+                    技术优势
+                </view>
+
+                <view class="introduce-item-text">
+                    实力强大的专业技术团队,利用物联网技术,打造安全高效、专业的无缝仓储物流体系。
+                </view>
+
+            </view>
+
+
+           
+            <view class="introduce-item">
+
+                <view class='introduce-item-img'>
+                    <image src="https://static.yidap.com/miniapp/logistics2.png"></image>
+                </view>
+
+                <view class="introduce-item-title">
+                    资源优势
+                </view>
+
+                <view class="introduce-item-text">
+                    与国内外主流干线物流、专业物流、主流快递达成战略合作关系,保证货物准时交付。
+                </view>
+
+            </view>
+
+
+            <view class="introduce-item">
+
+                <view class='introduce-item-img'>
+                    <image src="https://static.yidap.com/miniapp/logistics3.png"></image>
+                </view>
+
+                <view class="introduce-item-title">
+                    团队优势
+                </view>
+
+                <view class="introduce-item-text">
+                   组建千名最后一公里配送团队及自建中央仓储与上游仓储、小鹿驿站,最大程度满足客户需求。
+                </view>
+
+            </view>
+
+
+
+            <view class="introduce-item">
+
+                <view class='introduce-item-img'>
+                    <image src="https://static.yidap.com/miniapp/logistics4.png"></image>
+                </view>
+
+                <view class="introduce-item-title">
+                    管理优势
+                </view>
+
+                <view class="introduce-item-text">
+                    具有整体优化配置资源,协同运作的思想、文化、方法、手段和制度等有机体系。
+                </view>
+
+            </view>
+
+
+        </view>
+
+
+
+
+
+    </view>
+
+
+</view>

@@ -1,0 +1,8 @@
+<view class="my-toast {{ params.visible ? 'my-animate-fade-in' : 'my-animate-fade-out'}}" wx:if="{{params.visible}}">
+   
+    <view class="my-toast-bd">
+       <icon wx:if="{{ params.type}}" type="{{ params.type }}" size="55" color="{{ params.color }}" class="my-toast-icon" />
+        <view class="fs26">{{params.text}}</view>
+    </view>
+
+</view>

@@ -1,0 +1,48 @@
+<view class="fs30 address-form">
+
+    <view class="flex cell-padding border-bottom lh100">
+        <view>收货人</view>
+        <input bindinput='editConsignee' style="text-align:right" placeholder='请填写' placeholder-class="text-right" value='{{addressInfo.consignee}}'></input>
+    </view>
+
+    <view class="flex cell-padding border-bottom lh100">
+        <view>联系方式</view>
+        <input bindinput='editMobile' style="text-align:right" placeholder='请填写' placeholder-class="text-right" maxlength='11' value='{{addressInfo.mobile}}'></input>
+    </view>
+
+    <view class="flex cell-padding border-bottom lh100">
+        <view>所在地区</view>
+
+
+        <picker style="flex:1;" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range-key="region_name" range="{{[multiArray,multiArray[province].children, multiArray[province].children[city].children]}}">
+            <view class="picker" style="text-align:right;">
+              {{multiArray[multiIndex[0]].region_name}} {{multiArray[multiIndex[0]].children[multiIndex[1]].region_name}} {{multiArray[multiIndex[0]].children[multiIndex[1]].children[multiIndex[2]].region_name}} 
+            </view>
+            
+        </picker>
+
+        <!-- <text class="iconfont icon-jiantou"></text> -->
+
+    </view>
+
+    <view class="address-area">
+        <textarea bindinput='editDetailAddress' placeholder='请填写详细地址' value='{{addressInfo.address}}'>
+
+        </textarea>
+
+    </view>
+
+    <view class="spacing-view-24"></view>
+
+      <view hidden='true' class="flex cell-padding border-bottom lh100">
+        <view>设为默认地址</view>
+        <switch checked="{{is_default === 1}}" bindchange="setDefault" color="#C81A29"></switch>
+    </view>  
+
+
+
+</view>
+
+<view bindtap='saveSubmit' hover-class="hover-style" class="bottom-fixed h100 text-center lh100 text-white fs30">
+    保存并使用
+</view>

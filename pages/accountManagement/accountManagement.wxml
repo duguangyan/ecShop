@@ -1,0 +1,25 @@
+<view class="mgt-20 mgb-20 fs30 bold border-top border-bottom section-1 ">
+    <!-- <navigator hidden="{{true}}" class="border-bottom  pdl-20" open-type='navigate' url="../personalDetails/personalDetails">
+        <text class="iconfont icon-huiyuan mgr-30"></text>
+        <text>个人信息</text>
+        <text class="iconfont icon-jiantou bold text-999"></text>
+    </navigator> -->
+
+    <!-- <navigator open-type='navigate' url="../associatedAccount/associatedAccount" class="border-bottom  pdl-20">
+        <text class="iconfont icon-shouji mgr-30"></text>
+
+        <text>修改绑定手机号</text>
+        <text class="iconfont icon-jiantou bold text-999"></text>
+    </navigator> -->
+
+     <navigator class="border-bottom pdl-20" open-type='navigate' url='../resetPassword/resetPassword'>
+        <text class="iconfont icon-mima mgr-30"></text>
+        <text>修改密码</text>
+        <text class="iconfont icon-jiantou bold text-999"></text>
+    </navigator> 
+
+</view>
+<!-- 
+<view class="sign-out lh90 fs30 text-theme text-center">
+    退出登录
+</view> -->

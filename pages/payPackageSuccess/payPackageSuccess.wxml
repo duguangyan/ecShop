@@ -1,0 +1,67 @@
+<view class="text-center flex flex-center" style="padding:100rpx 0;">
+    <icon class="" type="success" size="{{'65'}}" />
+
+    <view class="mgl-20 text-left">
+
+        <view class="fs50 bold lh50 ">支付成功</view>
+        <view class="lh50 text-666 mgt-20">
+
+            <text>{{packageData.paid_at}}</text>
+        </view>
+
+    </view>
+</view>
+
+
+<view class="bg h20"></view>
+
+<view class="fs26">
+
+    <view class="flex flex-start lh80 border-bottom cell-padding">
+        订单编号：{{packageData.order_no}}
+    </view>
+
+    <view class="flex lh80 border-bottom cell-padding">
+        <text>{{packageData.package_name}}</text>
+        <text wx:if="{{packageData.packageData.mounth}}">有效期：{{packageData.packageData.mounth}} 月</text>
+    </view>
+
+    <view class="flex lh80 border-bottom cell-padding">
+        <text>原价：{{packageData.packageData.original_price ? '￥' + packageData.packageData.original_price : ''}}</text>
+        <view>
+            实际支付价格：
+            <text class="text-theme"> {{packageData.packageData.pay_price ? '￥' + packageData.packageData.pay_price: ''}}</text>
+        </view>
+    </view>
+
+</view>
+
+<view class="bg h20"></view>
+
+<!--会员框  -->
+<view>
+
+    <view class="member-section text-white flex ">
+
+        <view class="avart">
+            <image src="{{ memberInfo.avatar_url || '../../images/icons/default_avatar.png'}}"></image>
+        </view>
+
+        <view class="flex-1 info">
+
+            <view>{{memberInfo.nick_name || ''}}</view>
+            <view>
+                <text style="color:#F3DF02;" class="mgr-14 iconfont icon-diamonds"></text>
+                <text>套餐会员</text>
+            </view>
+
+        </view>
+    </view>
+
+    <view class="bg h20"></view>
+</view>
+
+<view class="flex mgt-60">
+    <button hover-class='hover-style' bindtap='remand' class="shop-btn">发布订单需求</button>
+    <button hover-class='hover-style' bindtap='checkOrderDetail' class="order-btn text-666">查看订单详情</button>
+</view>

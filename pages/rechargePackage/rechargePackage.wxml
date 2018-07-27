@@ -1,0 +1,132 @@
+<view class="fs30">
+    <!--包月套餐  -->
+    <view>
+
+        <view class="lh90 bold cell-padding flex">
+            <view>
+                <text class="bold">包月充值套餐</text>
+                <text data-info="month" bindtap='packageInfo' class="iconfont icon-wenhao pd-20 fs34"></text>
+            </view>
+            <navigator open-type='navigate' url="../packageIntroduction/packageIntroduction?direction=back" class="bold member-info-btn">会员特权</navigator>
+        </view>
+
+        <view class="flex flex-start border-bottom">
+
+            <view wx:for="{{monthPackage}}" wx:key="{{i}}" bindtap='selectPackage' data-mounth="{{item.mounth}}" data-type="{{item.type}}" data-id="{{item.id}}" data-price="{{item.pay_price}}" data-name="{{item.name}}" class="package-item flex text-center {{selected == item.id ? 'selected' : ''}} {{item.enabled == 2 ? 'disabled' : ''}}">
+
+                <view class="">{{item.name}}</view>
+                <view>
+                    <text class="through fs20 mgr-16">{{item.original_price ? '￥'+item.original_price : ''}}</text>
+                    <text class="text-theme bold price-text">{{item.pay_price ? '￥'+item.pay_price : ''}}</text>
+                </view>
+
+                <view wx:if="{{item.isrecommendation}}" class="fs20" style="position:absolute;left:320rpx;width:80rpx;line-heigth:34rpx;color:#FFF;border-radius:8rpx;background:#FE6C43;">
+                    <text class="iconfont icon-zan fs22"></text>
+                    <text>推荐</text>
+                </view>
+
+            </view>
+
+        </view>
+
+    </view>
+
+    <!--按次套餐  -->
+
+    <!-- <view class="bg h20"></view> -->
+
+    <view>
+        <view class="lh90 bold cell-padding">
+            <text class="bold">按次充值套餐</text>
+            <text data-info="time" bindtap='packageInfo' class="iconfont icon-wenhao pd-20 fs34"></text>
+        </view>
+
+        <view class="flex flex-start">
+
+            <view wx:for="{{timePackage}}" wx:key="{{i}}" bindtap='selectPackage' data-mounth="{{item.mounth}}" data-type="{{item.type}}" data-id="{{item.id}}" data-price="{{item.pay_price}}" data-name="{{item.name}}" class="package-item flex text-center {{selected == item.id ? 'selected' : ''}} {{item.enabled == 2 ? 'disabled' : ''}}">
+
+                <view class="">{{item.name}}</view>
+
+                <view>
+                    <text class="through fs20 mgr-16">{{item.original_price ? '￥'+item.original_price : ''}}</text>
+                    <text class="text-theme bold price-text">{{item.pay_price ? '￥'+item.pay_price : ''}}</text>
+                </view>
+            </view>
+
+        </view>
+    </view>
+
+
+
+    <view wx:if="{{service}}">
+        <view class="bg h20"></view>
+        <view class="lh90 bold cell-padding border-bottom">
+            <text>配送服务</text>
+            <text data-info="service" bindtap='packageInfo' class="iconfont icon-wenhao pd-20 fs34"></text>
+        </view>
+
+
+        <!-- <view class="flex border-bottom pd-20">
+
+            <view>*配送地址：</view>
+
+            <view class="flex-1"></view>
+
+        </view> -->
+        <!--配送地址 S  -->
+        <view class="flex pd-20 border-bottom">
+            <view>
+                <text class="text-theme">*</text>配送地址：</view>
+            <picker class="flex-1" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range-key="region_name" range="{{[multiArray,multiArray[province].children, multiArray[province].children[city].children]}}">
+                <view class="picker" style="text-align:right;">
+                    {{multiArray[multiIndex[0]].region_name}} {{multiArray[multiIndex[0]].children[multiIndex[1]].region_name}} {{multiArray[multiIndex[0]].children[multiIndex[1]].children[multiIndex[2]].region_name}}
+                </view>
+
+            </picker>
+            <text class="iconfont icon-jiantou"></text>
+        </view>
+        <!--配送地址 E  -->
+
+        <view class="flex border-bottom pd-20">
+
+            <view>配送价格：</view>
+
+            <view>{{multiArray[multiIndex[0]].children[multiIndex[1]].children[multiIndex[2]].info.price ? '￥' + multiArray[multiIndex[0]].children[multiIndex[1]].children[multiIndex[2]].info.price : ''}}</view>
+
+        </view>
+    </view>
+
+    <view class="h150"></view>
+
+</view>
+
+<view bindtap='recharge' hover-class="hover-style" class="bottom-fixed text-center text-white h100 lh100 fs32  {{isGo ?'disabled-c': ''}}">
+    立即充值
+</view>
+
+
+<!--三个说明框  -->
+<view wx:if="{{masking}}" bindtap='hideMasking' class="masking fs30">
+
+    <view wx:if="{{packageInfo === 'month'}}" class="detail-info-box">
+        <view class="title fs38 text-center mgb-40">按月套餐详情</view>
+        <view>1.按月充值套餐可享受相应折扣，充值成功后，次日开始生效；</view>
+        <view>2.月套餐根据充值金额，分别享受35次、60次、100次找料及代买样板服务；</view>
+        <view>3.超过有效期，用户需重新购买套餐，否则将按每次发布找料需求实际需支付金额支付。</view>
+    </view>
+
+    <view data-info="time" wx:if="{{packageInfo === 'time'}}" class="detail-info-box">
+        <view class="title fs38 text-center mgb-40">按次套餐详情</view>
+        <view>1.按次充值套餐可享受相应折扣，最低充值15次；</view>
+        <view>2.每发布一次找料需求将扣件次数，直至扣完；</view>
+        <view>3.充值次数为0时，用户需重新购买套餐，否则将按每次发布找料需求实际需支付金额支付。</view>
+    </view>
+
+    <view data-info="service" wx:if="{{packageInfo === 'service'}}" class="detail-info-box">
+        <view class="title fs38 text-center mgb-40">配送服务说明</view>
+        <view>1.除了广州市花都狮岭地区客户外，其他地区暂时不支持免费送样上门服务； </view>
+        <view>2.选择配送地址后，系统将默认与所购买的套餐次数绑定，按照物流收费标准收取物流费用（次数*单次配送费）； </view>
+        <view>3.未选择配送地址的客户配送方式默认到付 </view>
+    </view>
+
+</view>

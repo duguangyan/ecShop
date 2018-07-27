@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "抢购活动",
+    "usingComponents": {
+      
+        "toast": "../../component/toast/toast"
+    }
+}

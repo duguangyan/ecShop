@@ -1,0 +1,5 @@
+  <!-- <web-view style="" src="{{url}}" bindmessage="getMessage"></web-view>     -->
+
+  <toast params="{{params}}"/>
+
+  <button bindtap='openTips'>点击弹窗</button>

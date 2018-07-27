@@ -1,0 +1,82 @@
+.corporate-name {
+    display: flex;
+    justify-content: space-between;
+    padding: 20rpx;
+    line-height: 40rpx;
+}
+
+/* .goods-info {
+    padding: 30rpx 70rpx 30rpx 20rpx;
+    background: #F8F8F8;
+}
+
+ .goods-info image {
+     margin-right: 20rpx;
+     border-radius: 10rpx;
+ }
+
+.goods-info-text {
+    flex: 1;
+    min-height: 170rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; 
+
+}
+
+.goods-tag {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.goods-tag > view {
+    padding: 6rpx 12rpx;
+    margin:3rpx 12rpx 3rpx 0;
+    border: 1rpx #BABABA solid;
+} */
+
+/*中部信息  */
+.goods-list {
+    padding: 28rpx 24rpx;
+    background: #F8F8F8;
+}
+
+
+.goods-list scroll-view{
+     white-space:nowrap;
+}
+
+.goods-list image {
+    height: 170rpx;
+    width: 170rpx;
+    /* background: cornflowerblue; */
+    margin-right: 24rpx;
+    border-radius: 10rpx;
+}
+
+.goods-pay-line {
+   display: flex;
+   justify-content: flex-end;
+   height: 80rpx;
+}
+
+.goods-pay-line>view {
+    margin-left: 20rpx;
+    line-height: 80rpx;
+}
+
+.goods-action {
+    justify-content: flex-end;
+    padding: 12rpx 20rpx 40rpx;
+    /* border-top: 1rpx #E5E5E5 solid; */
+}
+
+.goods-action>view {
+    width : 150rpx;
+    height: 50rpx;
+    margin-left: 20rpx;
+    line-height: 50rpx;
+    text-align: center;
+    border: 1rpx #BABABA solid;
+    border-radius: 10rpx;
+}

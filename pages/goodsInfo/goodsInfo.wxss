@@ -1,0 +1,146 @@
+page {
+    background: #F2F5FA;
+    font-size: 30rpx;
+}
+
+view {
+    background: #FFF;
+}
+
+.tab {
+    height: 88rpx;
+    padding: 0 114rpx;
+    color: #ABABAB;
+}
+
+.tab view {
+    height: 88rpx;
+    line-height: 88rpx;
+}
+
+.tab .active {
+    color: #C81A29;
+    /* text-decoration: underline; */
+    border-bottom: 4rpx #C81A29 solid;
+}
+
+.info-box {
+    margin-top: 54rpx;
+    padding-bottom: 100rpx;
+}
+
+
+/*图片详情  */
+.img-box {
+   padding: 16rpx 16rpx 0 16rpx;
+}
+
+.img-box image {
+    width: 100%;
+   display: block;
+}
+
+/*产品详情  */
+.text-box {
+    padding: 4rpx 24rpx;
+}
+
+.text-box view {
+    height: 78rpx;
+    line-height: 78rpx;
+    border-bottom: 2rpx #E6E9EE solid;
+}
+
+.text-box view:last-of-type {
+    border-bottom: 0;
+}
+.salePay{
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  text-align: center;
+  background-color: #c81a29;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 750rpx;
+}
+
+/*购买弹窗  */
+
+.purchase-box {
+    width: 750rpx;
+    height: auto;
+    min-height: 929rpx;
+    background: #fff;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+    /* transform: translateY(700rpx); */
+    transition: all 0.33s;
+}
+
+.slide-up {
+    transform: translateY(0);
+}
+
+.slide-down {
+    transform: translateY(1300rpx);
+}
+
+/*商品信息  */
+
+.item-info-box {
+    align-items: flex-end;
+    padding: 52rpx 50rpx 38rpx;
+}
+
+.item-info-box image {
+    display: block;
+    margin-right: 30rpx;
+}
+
+/*关闭按钮  */
+
+.close-box {
+    padding: 30rpx;
+    position: absolute;
+    right: 0rpx;
+    top: 0rpx;
+}
+
+/*地址  */
+
+.address-box {
+}
+
+/*购买数量  */
+
+.num-box {
+    width: 250rpx;
+    text-align: center;
+}
+
+.num-box input {
+    width: 86rpx;
+    height: 70rpx;
+    background: #f8f8f8;
+}
+
+.num-box view {
+    width: 76rpx;
+    height: 70rpx;
+    background: #f8f8f8;
+}
+
+/*抢购按钮  */
+
+.purchase-btn button {
+    margin-top: 50rpx;
+    background: #f63536;
+    color: #fff;
+    font-size: 32rpx;
+    border-radius: 220rpx;
+}

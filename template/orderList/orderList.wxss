@@ -1,0 +1,32 @@
+.corporate-name {
+    line-height: 84rpx;
+    padding: 0 30rpx;
+}
+
+.goods-info {
+    padding: 20rpx 30rpx 22rpx 30rpx;
+}
+
+.goods-info image {
+    display: block;
+    width: 170rpx;
+    height: 170rpx;
+    margin-right: 20rpx;
+    border-radius: 10rpx;
+}
+
+.goods-info-text {
+    flex: 1;
+    min-height: 170rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.goods-tag {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 24rpx;
+}
+
+

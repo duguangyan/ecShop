@@ -1,0 +1,5 @@
+<view wx:if="{{modalShow}}" class="c-loading-more border-bottom">
+
+    <view class="loading complete fs28 bold" >已加载全部</view>
+
+</view>

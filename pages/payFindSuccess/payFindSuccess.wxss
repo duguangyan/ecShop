@@ -1,0 +1,23 @@
+ @import '../../component/mySearchOrderItem/mySearchOrderItem.wxss'; 
+
+
+/*去充值板块  */
+.go-recharge {
+    width: 750rpx;
+    height:205rpx; 
+    background: url('https://static.yidap.com/miniapp/find/payment-logo.png') no-repeat;
+    background-size: 750rpx 205rpx;
+
+}
+
+.shop-btn {
+    width: 320rpx;
+    background: #fefefe;
+    font-size: 30rpx;
+}
+
+.order-btn {
+    width: 320rpx;
+    background: #fefefe;
+    font-size: 30rpx;
+}

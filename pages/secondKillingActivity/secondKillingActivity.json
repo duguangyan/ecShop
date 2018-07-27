@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "商城秒杀",
+    "usingComponents": {
+        "timer": "../../component/timer/timer"
+    }
+}

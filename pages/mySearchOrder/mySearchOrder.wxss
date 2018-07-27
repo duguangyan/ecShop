@@ -1,0 +1,19 @@
+@import '../../component/mySearchOrderItem/mySearchOrderItem.wxss';
+
+
+/*取消支付操作按钮  */
+.goods-action {
+    justify-content: flex-end;
+    padding: 20rpx;
+    /* border-top: 1rpx #E5E5E5 solid; */
+}
+
+.goods-action>view {
+    width : 150rpx;
+    height: 50rpx;
+    margin-left: 20rpx;
+    line-height: 50rpx;
+    text-align: center;
+    border: 1rpx #BABABA solid;
+    border-radius: 10rpx;
+}

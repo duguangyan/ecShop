@@ -1,0 +1,6 @@
+{
+    "backgroundTextStyle": "dark",
+    "navigationBarTitleText": "找料",
+    "navigationBarTextStyle": "#FFF",
+    "enablePullDownRefresh": true
+}

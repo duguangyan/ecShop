@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "促销",
+  "usingComponents": {
+    "loading": "../../component/loading/loading"
+  }
+}

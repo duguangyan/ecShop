@@ -1,0 +1,74 @@
+/*  */
+
+.section-box {
+    padding: 10rpx 50rpx 80rpx;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.section-item {
+    box-sizing: content-box;
+    width: calc(50% - 120rpx);
+    height: 180rpx;
+    padding: 60rpx 60rpx 0;
+    text-align: center;
+}
+
+.section-item image {
+    width: 62rpx;
+    height: 62rpx;
+}
+
+.section-item-title {
+    line-height: 46rpx;
+}
+
+.now-btn {
+    margin: 0 auto 50rpx;
+    width: 260rpx;
+    border: 1rpx #c81a29 solid;
+    border-radius: 25rpx;
+    line-height: 50rpx;
+    font-size: 28rpx;
+    text-align: center;
+    font-weight: 700;
+}
+
+.free-service {
+    padding: 0 46rpx;
+}
+
+.together-box {
+    padding: 66rpx 125rpx 0;
+}
+
+.together-box button {
+    height: 90rpx;
+    line-height: 90rpx;
+    background: #c81a29;
+    color: #fff;
+    font-size: 28rpx;
+}
+
+.recharge-box {
+    padding: 40rpx 125rpx 0;
+}
+
+.recharge-box button {
+    height: 90rpx;
+    line-height: 90rpx;
+    background: #fff;
+    color: #c81a29;
+    font-size: 28rpx;
+}
+
+.recharge-box button::after{
+    border:1rpx #c81a29 solid;
+}
+
+.contact {
+    text-align: center;
+    padding: 50rpx 0 80rpx;
+    font-size: 26rpx;
+}

@@ -1,0 +1,56 @@
+<view class="classify-catetory-list text-center">
+    <image style="display:inline-block;width:114rpx;height:144rpx;padding:86rpx 0 66rpx;" src="../../images/no_order.png"></image>
+    <view>
+        <text class="fs34 bold text-666">暂无数据</text>
+    </view>
+
+    <block wx:if="{{false}}" wx:for="{{[15,2]}}" wx:key="*this">
+        <view class="filter-box">
+            <view class="filter-option-title">
+                <view>
+                    用途
+                </view>
+
+                <image class="view-more" src="../../images/icons/view_more.png"></image>
+
+            </view>
+
+            <view class="filter-option-list fs28">
+                <view class="filter-option-item ellipsis">
+                    鞋革
+                </view>
+
+                <view class="filter-option-item ellipsis selected">
+                    箱包
+                </view>
+
+                <view class="filter-option-item ellipsis">
+                    手动阀
+                </view>
+
+                <view class="filter-option-item ellipsis">
+                    皮带
+                </view>
+
+                <view class="filter-option-item ellipsis">
+                    箱包手袋
+                </view>
+
+            </view>
+        </view>
+
+    </block>
+
+
+</view>
+<view wx:if="{{false}}" class="filter-confirmation-box">
+
+    <view class="filter-reset">
+        重置
+    </view>
+
+    <view class="filter-confirm">
+        确认
+    </view>
+
+</view>

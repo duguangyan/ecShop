@@ -1,0 +1,27 @@
+<import src="../../component/mySearchOrderItem/mySearchOrderItem.wxml" />
+
+<block wx:for="{{[1,2,34]}}">
+
+    <view>
+        <view class="h20 bg"></view>
+        <navigator class="flex cell-padding lh90 border-bottom">
+            <view>订单编号：
+                <text>0123512312</text> </view>
+            <view class="text-theme">待支付/待审核/找料中/已完成</view>
+        </navigator>
+
+        <!--搜索信息  -->
+        <template is="mySearchOrderItem"></template>
+
+        <view class="flex goods-action border-top">
+
+            <view bindtap='cancelOrder' data-id="{{id}}" wx:if="{{status !== 1}}">取消订单</view>
+            <view bindtap='cancelOrder' data-id="{{id}}" wx:if="{{status === 2}}">取消订单</view>
+            <view bindtap='payOrder' data-id="{{id}}" data-sn="{{order_sn}}" data-amount="{{order_amount}}" class="text-theme border-theme" wx:if="{{status !== 2}}">去支付</view>
+            <view bindtap='ReceivingConfirm' data-id="{{id}}" wx:if="{{status === 3}}">确认收货</view>
+            <view class="visibility-hidden" bindtap='deleteOrder' data-id="{{id}}" wx:if="{{status === 4}}">删除订单</view>
+
+        </view>
+    </view>
+
+</block>

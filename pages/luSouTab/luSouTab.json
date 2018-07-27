@@ -1,0 +1,6 @@
+{
+    "backgroundTextStyle": "dark",
+    "navigationBarTitleText": "小鹿快找",
+    "navigationBarTextStyle": "#FFF",
+    "enablePullDownRefresh": true
+}

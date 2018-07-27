@@ -1,0 +1,114 @@
+<view class="container fs30 ">
+
+    <view>
+
+        <view class="border-bottom h90 lh90 pdl-30">
+            <text class="bold">发票类型</text>
+        </view>
+
+        <view class="pdl-30 h100 lh80 fs24 flex flex-start">
+            <view data-id="1" bindtap='selectType' class="mgr-60">
+                <text hidden='{{!isPerson}}' class="iconfont icon-dui fs40 pdr-20 text-theme"></text>
+                <text hidden='{{isPerson}}' class="iconfont icon-yuan fs40 pdr-20 text-eb"></text>
+                <text>普通电子发票（个人）</text>
+            </view>
+
+            <view data-id="2" bindtap='selectType'>
+                <text hidden='{{isPerson}}' class="iconfont icon-dui fs40 pdr-20 text-theme"></text>
+                <text hidden='{{!isPerson}}' class="iconfont icon-yuan fs40 pdr-20 text-eb"></text>
+                <text>普通电子发票（公司）</text>
+            </view>
+
+        </view>
+
+    </view>
+
+    <view class="spacing-view"></view>
+
+
+
+    <!-- <view class="title-box border-bottom  border-top">
+        <view class=" bold">
+            发票抬头
+        </view>
+        <checkbox-group class="title-type">
+            <view class="mgr-44">
+                <label>
+                    <checkbox></checkbox>
+                    <text>个人</text>
+                </label>
+            </view>
+
+            <view>
+                <label>
+                    <checkbox></checkbox>
+                    <text>单位</text>
+                </label>
+            </view>
+        </checkbox-group>
+
+        <view hidden='{{false}}'>
+
+            <view class="radius-10" style="background:#F1F2F6;">
+                <input placeholder='请填写单位名称'></input>
+            </view>
+
+            <view class="radius-10" style="background:#F1F2F6;">
+                <input placeholder-class='text-theme' placeholder='请在此填写纳税人识别号'></input>
+            </view>
+
+        </view>
+    </view> -->
+
+    <view class="spacing-view"></view>
+
+    <view hidden='{{isPerson}}' class="border-bottom lh90">
+
+        <view class="pdl-30  bold border-bottom">
+            发票信息
+        </view>
+
+        <view class="pdl-30 flex flex-start  border-bottom">
+
+            <view class="mgr-20 section-head"><text class="text-theme">*</text> 发票抬头：</view>
+            <input bindinput='invPayee' style="flex:1;" placeholder='请填写公司名称' value="{{invPayee}}" placeholder-class='text-999'></input>
+
+
+        </view>
+
+        <view class="pdl-30 flex flex-start">
+
+            <view class="mgr-20 section-head"><text class="text-theme">*</text>识别号：</view>
+            <input bindinput='invTax' style="flex:1;" placeholder='请在此填写纳税人识别号'  value="{{invTax}}" placeholder-class='text-999'></input>
+
+        </view>
+
+    </view>
+
+    <view hidden='{{!isPerson}}' class=" lh90">
+
+        <view class="pdl-30  bold border-bottom">
+            发票信息
+        </view>
+
+        <view class="pdl-30  flex flex-start  border-bottom">
+
+            <view class="mgr-20 section-head">发票抬头：</view>
+            <view>
+                个人
+            </view>
+
+        </view>
+    </view>
+
+    <view class="spacing-view"></view>
+
+    <view class="template-invoice">
+        <image src="https://static.yidap.com/miniapp/temp_Invoice.png"></image>
+    </view>
+
+</view>
+
+<view class="submit-btn">
+    <button bindtap='submit' hover-class="hover-style" class="bg-theme text-white">确定</button>
+</view>

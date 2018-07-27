@@ -1,0 +1,115 @@
+<view catchtap='selectTab' class="tab flex">
+
+    <block wx:for="{{tab}}" wx:key="{{i}}">
+        <view data-idx="{{index}}" class="{{ index == selectIDX ? 'active' : ''}}">{{item}}</view>
+    </block>
+</view>
+
+<view class="info-box">
+
+
+    <view wx:if="{{selectIDX === 0}}" class="img-box">
+
+        <view>
+
+            <block wx:for="{{imgsrc}}" wx:key="*this">
+                <image lazy-load='{{true}}' mode='widthFix' src="{{item}}"></image>
+            </block>
+
+        </view>
+
+    </view>
+
+    <view wx:if="{{selectIDX === 1}}" class="text-box">
+
+        <block wx:for="{{descstr}}" wx:key="*this">
+          
+                <view>
+                    <text>{{item[0]}} : </text>
+                    <text>{{item[1]}}</text>
+                </view>
+           
+
+        </block>
+
+    </view>
+
+    <view wx:if="{{false}}" class="article-box">
+
+        <view>
+
+        </view>
+
+    </view>
+
+</view>
+<!-- 
+<navigator open-type='navigateBack' class="bottom-fixed h100 lh100 text-center text-white">
+    返回
+</navigator> -->
+
+<view class='salePay' wx:if='{{fromSales==1}}' catchtap='snapUp'>
+  立即抢购
+</view>
+
+
+<view class="purchase-box {{isShow ? 'slide-up' : 'slide-down'}}" catchtouchmove="preventD">
+
+    <!--商品信息  -->
+
+    <view class='item-info-box flex flex-start relative'>
+
+        <view>
+            <image style="width:250rpx;height:250rpx;background:#fefefe;" src='{{itemInfo.detail.goods_img_url}}'></image>
+        </view>
+
+        <view class="fs30">
+            <view class="theme-color"> {{'￥' +itemInfo.detail.sku[0].shop_price + '/'+itemInfo.detail.sku[0].unit_name}}</view>
+            <view wx:if='{{itemInfo.total !=-1}}'>
+                库存{{itemInfo.total - itemInfo.sale_volume}} {{itemInfo.detail.sku[0].unit_name}}
+            </view>
+            <view wx:if='{{itemInfo.total ==-1}}'>
+                库存足量
+            </view>
+        </view>
+
+        <view bindtap='close' class="close-box">
+            <text class="iconfont icon-chacha fs50 text-gray"></text>
+        </view>
+    </view>
+
+    <!--地址信息  -->
+    <view bindtap='dealAddress' data-url="{{defaultAddress? '../consigneeAddress/consigneeAddress' : '../newAddress/newAddress?type=new'}}" class="flex pd-30 address-box">
+        <text class="iconfont icon-genggaishouhuodizhi fs50 text-gray mgr-14"></text>
+        <view hidden="{{!defaultAddress}}" class="flex-1 fs30">{{defaultAddress.city_str}} {{defaultAddress.address}}</view>
+        <view hidden="{{defaultAddress}}" class="flex-1 fs30">点击添加收货地址</view>
+        <text class="iconfont icon-jiantou fs40 text-gray"></text>
+    </view>
+    <view class='fs24 pdl-20' style='color:#666;'>
+      （因活动火爆,所有订单将在下单后48小时之内完成发货）
+    </view>
+    <!--数量按钮  -->
+    <view class="flex pd-30 mgt-60">
+        <view class='fs30 bold'>购买数量
+            <text class="fs24" wx:if='{{itemInfo.daily_limit!=-1}}'>（单日限购{{itemInfo.daily_limit}}{{itemInfo.detail.sku[0].unit_name}}）</text>
+            <text class="fs24" wx:if='{{itemInfo.daily_limit==-1}}'>（不限购）</text>
+        </view>
+            
+        <view class="flex fs50 num-box">
+            <view bindtap='min'>-</view>
+            <input class="fs40" type='number' value='{{purchaseNum}}' maxlength='3' bindblur='change'></input>
+            <view bindtap='add'>+</view>
+        </view>
+    </view>
+
+    <!-- <view bindtap='goodsInfo' class="fs30 pd-30 flex">
+        <text>商品详情</text>
+        <text class="iconfont icon-jiantou text-gray"></text>
+    </view> -->
+
+
+    <!--抢购按钮  -->
+    <view class="pd-30 purchase-btn" wx:if='{{fromSales==1}}'>
+        <button bindtap='purchase' class="{{submitBtn ? 'disabled-c' : ''}}">立即抢购</button>
+    </view>
+</view>

@@ -1,0 +1,80 @@
+.container {
+    padding-bottom:100rpx;
+}
+.select-goods-info {
+    display: flex;
+    padding: 22rpx;
+}
+
+.box-l {
+    flex: 1;
+    display: flex;
+}
+
+.box-l .goods-text {
+    padding: 16rpx 44rpx 0 24rpx;
+}
+
+.option-title {
+    padding-left: 40rpx;
+    line-height: 80rpx;
+    background: #f2f2f2;
+}
+
+.option-item-box {
+    justify-content: flex-start;
+    padding: 22rpx 28rpx 70rpx;
+}
+
+.option-item-box>view {
+    line-height: 60rpx;
+    padding: 0 50rpx;
+    margin-right: 30rpx;
+    border: 1rpx #f2f2f2 solid;
+    border-radius: 10rpx;
+    color: #909090;
+}
+
+.option-item-box>view.selected {
+    border-color: #C81A29;
+    background-color: #C81A29;
+    color: #fff;
+}
+
+.item-line {
+    padding: 16rpx 10rpx 20rpx;
+    line-height: 62rpx;
+}
+
+.item-line:last-of-type {
+    border: none;
+}
+
+.item-line .add-cart {
+    padding: 0 28rpx;
+}
+
+
+.confirm-btn {
+    height: 98rpx;
+    line-height: 98rpx;
+    text-align: center;
+    color: #FFF;
+    font-size: 38rpx;
+}
+
+/*输入框  */
+.input-btn {
+    border-radius: 6rpx;
+    text-align: center;
+}
+
+.input-btn text {
+    width: 54rpx;background: #F5FAFF;
+}
+
+.input-btn input {
+    width: 76rpx;
+    border-left: 1rpx #CBCBCB solid;
+    border-right: 1rpx #CBCBCB solid;
+}

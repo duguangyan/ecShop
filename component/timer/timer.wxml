@@ -1,0 +1,12 @@
+<!-- 倒计时 -->
+<view class="timer-box">
+<view>显示剩余时间：{{wxTimer}}</view>
+    <view>{{}}</view>
+    <view>时</view>
+    <view>{{}}</view>
+    <view>分</view>
+    <view>{{}}</view>
+    <view>秒</view>
+
+
+</view>

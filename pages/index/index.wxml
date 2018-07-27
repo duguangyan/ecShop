@@ -1,0 +1,397 @@
+<!--index.wxml-->
+<!-- <view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+    <text style="font-size:100rpx" class="iconfont icon-tiaomasousuo"></text>
+  </view>
+</view> -->
+
+
+
+<view class="relative pdt-96">
+    <view class="search-box">
+        <view bindtap="openCategoryList" class="search-box-left" hover-class="hover-style">
+            <view>
+                <text class="iconfont icon-tubiao13 fs46 lh50"></text>
+            </view>
+            <!-- <image src="../../images/index/1.1@2x.png"></image> -->
+            <view class="">分类</view>
+        </view>
+
+        <view class="search-box-right">
+            <navigator open-type='navigate' url="../search/search" class="search-inner-box">
+                <!-- <image class="search-box-icon" mode='widthFix' src="../../images/icons/search.png"></image> -->
+                <input disabled placeholder="请输入要搜索的商品" placeholder-class="fs28" />
+            </navigator>
+        </view>
+        
+        <!--下拉分类列表  -->
+
+        <view wx:if="{{isShowCategoryList}}" class="category-list">
+
+            <view class="category-list-first">
+
+
+                <scroll-view scroll-y style="max-height: 600rpx;">
+
+                    <block wx:for="{{list1}}" wx:key="{{i}}">
+
+                        <view class="{{ numList1 == index ? 'category-selected' : ''}}" hover-class="hover-style" bindtap="openCategoryList2" data-id="{{item.id}}" data-num="{{index}}">{{item.name}}</view>
+
+                    </block>
+
+
+                </scroll-view>
+            </view>
+
+            <view hidden="{{isShowCategoryList2}}" class="category-list-second">
+                <scroll-view scroll-y style="max-height: 600rpx;">
+
+                    <block wx:for="{{list2}}" wx:key="{{i}}">
+
+                        <view class="{{ numList2 == index ? 'category-selected' : ''}}" hover-class="hover-style" bindtap="openCategoryList3" data-id="{{item.id}}" data-num="{{index}}">{{item.name}}</view>
+                    </block>
+
+                </scroll-view>
+            </view>
+            <!-- <scroll-view scroll-y style="max-height: 600rpx;float：left；">  </scroll-view> -->
+
+            <view hidden="{{isShowCategoryList3}}" class="category-list-third">
+                <scroll-view scroll-y style="max-height:600rpx;">
+                    <view class="category-list-last">
+
+                        <block wx:for="{{list3}}" wx:key="{{i}}">
+                            <view class="ellipsis" hover-class="hover-style" bindtap="openSearch" data-name="{{item.name}}" data-id="{{item.id}}">{{item.name}}</view>
+                        </block>
+
+                    </view>
+                </scroll-view>
+            </view>
+        </view>
+
+    </view>
+
+    <view class="{{isShowCategoryList ? 'filter-b6' : ''}}" bindtap='hideCategoryList'>
+
+        <swiper indicator-dots="true" circular="true" autoplay="true" interval="4000" duration="500" indicator-active-color="#f5f5f5" style='height:380rpx'>
+            <block wx:for="{{cmUrls}}" wx:key="{{i}}">
+                <swiper-item>
+                <!--小程序跳转  -->
+                    <navigator wx:if="{{item.target}}" open-type="{{item.openType}}" hover-class="none" target="{{item.target}}" app-id="{{item.appid}}" path="{{item.navUrl}}" >
+                        <image lazy-load='true' style='width:750rpx;height:380rpx;' mode='widthFix' src="{{item.url}}" />
+                    </navigator>
+
+                    <navigator wx:else open-type="{{item.openType}}" hover-class="none" url="{{item.navUrl}}" >
+                        <image lazy-load='true' style='width:750rpx;height:380rpx;' mode='widthFix' src="{{item.url}}" />
+                    </navigator>
+
+                </swiper-item>
+            </block>
+        </swiper>
+
+        <!--交易动态 S  -->
+
+        <!-- <view class="transaction-news border-bottom">
+            <view class="transaction-news-icon">
+                <image style="width:118rpx;height:38rpx;" src="../../images/index/transaction-news.png"></image>
+            </view>
+
+            <view class="transaction-news-text fs28 ellipsis">
+               <text>一大批公司决定缀合 XXX和 XX一大批公司决定缀合 XXX和 XX一大批公司决定缀合 XXX和 XX一大批公司决定缀合 XXX和 XX</text> 
+            </view>
+        </view> -->
+
+        <!--交易动态 E  -->
+
+        <view class="nav-list">
+
+            <view class="nav-list-1">
+                <navigator bindtap='find' hover-class="none" target="miniProgram" open-type='navigate' app-id="wx95dd0020bb2c868f" path="pages/index/index">
+                    <image class="nav-list-icon" src="../../images/index/nav-list-1.png"></image>
+                    <view class="nav-list-text">找料</view>
+                </navigator>
+                <navigator hover-class="none" open-type='navigate' url="../goodsList/goodsList">
+                    <image class="nav-list-icon" src="../../images/index/nav-list-2.png"></image>
+                    <view class="nav-list-text">采购</view>
+                </navigator>
+
+                 <navigator hover-class="none" open-type='navigate' url="../partner/partner">
+                    <image class="nav-list-icon" src="../../images/index/nav-list-5.png"></image>
+                    <view class="nav-list-text">鹿伙人</view>
+                </navigator>
+                <navigator hover-class="none" open-type='navigate' url="../logistics/logistics">
+                    <image class="nav-list-icon" src="../../images/index/nav-list-6.png"></image>
+                    <view class="nav-list-text">鹿通物流</view>
+                </navigator>
+                <!-- <navigator hover-class="none">
+                    <image class="nav-list-icon" src="../../images/index/nav-list-3.png"></image>
+                    <view class="nav-list-text">求购</view>
+                </navigator> -->
+                <!-- <navigator hover-class="none">
+                    <image class="nav-list-icon" src="../../images/index/nav-list-4.png"></image>
+                    <view class="nav-list-text">优惠套餐</view>
+                </navigator>
+
+                <navigator hover-class="none">
+                    <image class="nav-list-icon" src="../../images/index/nav-list-7.png"></image>
+                    <view class="nav-list-text">产业头条</view>
+                </navigator> -->
+            </view>
+
+            <!-- <view class="nav-list-1 nav-list-2 mgt-20 flex-start"> -->
+               
+                <!-- <navigator hover-class="none">
+                    <image class="nav-list-icon" src="../../images/index/nav-list-7.png"></image>
+                    <view class="nav-list-text">产业头条</view>
+                </navigator> -->
+                <!-- <navigator hover-class="none">
+                    <image class="nav-list-icon" src="../../images/index/nav-list-8.png"></image>
+                    <view class="nav-list-text">定制集采</view>
+                </navigator> -->
+            <!-- </view> -->
+        </view>
+
+        <view class="bg" style="height:30rpx;"></view>
+
+        <!--服务列表  -->
+        <!-- <view class="service-list">
+            <navigator>
+                <image mode='scaleToFill' src="../../images/index/service-list-1.png"></image>
+            </navigator>
+
+            <navigator>
+                <image mode='scaleToFill' src="../../images/index/service-list-2.png"></image>
+            </navigator>
+
+            <navigator>
+                <image src="../../images/index/service-list-3.png"></image>
+            </navigator>
+
+            <navigator>
+                <image src="../../images/index/service-list-4.png"></image>
+            </navigator>
+        </view>  -->
+
+        <view class="transaction-news">
+        <view class="transaction-news-icon">
+            <image style="width:118rpx;height:38rpx;" src="../../images/index/transaction-news.png"></image>
+        </view>
+
+        <view class="marquee_container" style="--marqueeWidth--:{{-marquee.width}}em">
+            <view class="marquee_text">{{marquee.text}}</view>
+        </view>
+    </view>
+
+        <!--面料 S  -->
+        <view class="recommend-list-nav">
+            <view class="recommend-title bold-600">
+                面料
+            </view>
+
+            <navigator open-type='navigate' url="../goodsList/goodsList?cate=1" class="recommend-more text-gray">
+                更多
+                <text class="iconfont icon-jiantou1"></text>
+            </navigator>
+
+        </view>
+
+        <view class="recommend-list">
+
+            <view class="recommend-list-left">
+
+                <navigator open-type='navigate' url="../goodsDetail/goodsDetail?id=659" class="recommend-list-item recommend-list-item-long">
+                    <image src="https://static.yidap.com/miniapp/mianliao659.jpg"></image>
+                </navigator>
+
+                <navigator open-type='navigate' url="../goodsDetail/goodsDetail?id=141" class="recommend-list-item">
+                    <image lazy-load='true' src="https://static.yidap.com/miniapp/mianliao141.jpg"></image>
+                </navigator>
+
+            </view>
+
+            <view class="recommend-list-right">
+
+                <navigator open-type='navigate' url="../goodsDetail/goodsDetail?id=32" class="recommend-list-item">
+                    <image src="https://static.yidap.com/miniapp/mianliao32.jpg"></image>
+                </navigator>
+
+                <navigator open-type='navigate' url="../goodsDetail/goodsDetail?id=214" class="recommend-list-item">
+                    <image lazy-load='true' src="https://static.yidap.com/miniapp/mianliao214.jpg"></image>
+                </navigator>
+
+                <navigator open-type='navigate' url="../goodsDetail/goodsDetail?id=205" class="recommend-list-item">
+                    <image lazy-load='true' src="https://static.yidap.com/miniapp/mianliao205.jpg"></image>
+                </navigator>
+            </view>
+
+        </view>
+        <!--面料 E  -->
+        <!-- <view class="bg" style="height:10rpx;"></view> -->
+
+
+        <!--辅料 S  -->
+        <view class="recommend-list-nav">
+            <view class="recommend-title bold-600">
+                辅料
+            </view>
+
+            <navigator open-type='navigate' url="../goodsList/goodsList?cate=2" class="recommend-more text-gray">
+                更多
+                <text class="iconfont icon-jiantou1"></text>
+            </navigator>
+
+        </view>
+
+        <view class="recommend-list">
+
+            <view class="recommend-list-left">
+
+                <navigator open-type='navigate' url="../goodsDetail/goodsDetail?id=1061" class="recommend-list-item recommend-list-item-long">
+                    <image lazy-load='true' src="https://static.yidap.com/miniapp/fuliao1061.jpg"></image>
+                </navigator>
+
+                <navigator open-type='navigate' url="../goodsDetail/goodsDetail?id=676" class="recommend-list-item">
+                    <image lazy-load='true' src="https://static.yidap.com/miniapp/fuliao676.jpg"></image>
+                </navigator>
+
+            </view>
+
+            <view class="recommend-list-right">
+
+                <navigator open-type='navigate' url="../goodsDetail/goodsDetail?id=978" class="recommend-list-item">
+                    <image lazy-load='true' src="https://static.yidap.com/miniapp/fuliao978.jpg"></image>
+                </navigator>
+
+                <navigator open-type='navigate' url="../goodsDetail/goodsDetail?id=965" class="recommend-list-item">
+                    <image lazy-load='true' src="https://static.yidap.com/miniapp/fuliao965.jpg"></image>
+                </navigator>
+
+                <navigator open-type='navigate' url="../goodsDetail/goodsDetail?id=970" class="recommend-list-item">
+                    <image lazy-load='true' src="https://static.yidap.com/miniapp/fuliao970.jpg"></image>
+                </navigator>
+            </view>
+
+        </view>
+        <!--辅料 E  -->
+
+        <!-- <view class="bg" style="height:10rpx;"></view> -->
+
+
+        <!--五金 S  -->
+        <view class="recommend-list-nav">
+            <view class="recommend-title bold-600">
+                五金
+            </view>
+
+            <navigator open-type='navigate' url="../goodsList/goodsList?cate=3" class="recommend-more text-gray">
+                更多
+                <text class="iconfont icon-jiantou1"></text>
+            </navigator>
+
+        </view>
+
+        <view class="recommend-list">
+
+            <view class="recommend-list-left">
+
+                <navigator open-type='navigate' url="../goodsDetail/goodsDetail?id=455" class="recommend-list-item recommend-list-item-long">
+                    <image lazy-load='true' src="https://static.yidap.com/miniapp/wujin455.jpg"></image>
+                </navigator>
+
+                <navigator open-type='navigate' url="../goodsDetail/goodsDetail?id=405" class="recommend-list-item">
+                    <image lazy-load='true' src="https://static.yidap.com/miniapp/wujin405.jpg"></image>
+                </navigator>
+
+            </view>
+
+            <view class="recommend-list-right">
+
+                <navigator open-type='navigate' url="../goodsDetail/goodsDetail?id=603" class="recommend-list-item">
+                    <image lazy-load='true' src="https://static.yidap.com/miniapp/wujin603.jpg"></image>
+                </navigator>
+
+                <navigator open-type='navigate' url="../goodsDetail/goodsDetail?id=574" class="recommend-list-item">
+                    <image lazy-load='true' src="https://static.yidap.com/miniapp/wujin574.jpg"></image>
+                </navigator>
+
+                <navigator open-type='navigate' url="../goodsDetail/goodsDetail?id=473" class="recommend-list-item">
+                    <image lazy-load='true' src="https://static.yidap.com/miniapp/wujin473.jpg"></image>
+                </navigator>
+            </view>
+
+        </view>
+        <!--五金 E  -->
+
+
+
+        <!-- <view class="bg" style="height:20rpx;"></view> -->
+
+
+        <view class="recommend-list-nav">
+            <view class="recommend-title">
+                合作品牌
+            </view>
+
+            <navigator class="recommend-more text-gray visibility-hidden">
+                更多
+                <text class="iconfont icon-jiantou1 "></text>
+            </navigator>
+        </view>
+
+        <view class="cooperation-brand">
+
+            
+
+            <view wx:for="{{brandList}}" wx:key="{{i}}" data-brand="{{item.name}}" class="cooperation-brand-item">
+
+                <image lazy-load='true' mode='widthFix' class="cooperation-brand-img" src='{{item.brand_logo_url}}'></image>
+            </view>
+
+            <!-- <view class="cooperation-brand-item">
+
+                <image lazy-load='true' class="cooperation-brand-img" src='../../images/index/cooperation-brand-item2.png'></image>
+            </view>
+
+            <view class="cooperation-brand-item">
+
+                <image lazy-load='true' class="cooperation-brand-img" src='../../images/index/cooperation-brand-item3.png'></image>
+            </view>
+
+            <view class="cooperation-brand-item no-border-right">
+
+                <image lazy-load='true' class="cooperation-brand-img" src='../../images/index/cooperation-brand-item4.png'></image>
+            </view>
+
+            <view class="cooperation-brand-item">
+
+                <image lazy-load='true' class="cooperation-brand-img" src='../../images/index/cooperation-brand-item5.png'></image>
+            </view>
+
+            <view class="cooperation-brand-item">
+
+                <image lazy-load='true' class="cooperation-brand-img" src='../../images/index/cooperation-brand-item6.png'></image>
+            </view>
+
+            <view class="cooperation-brand-item">
+
+                <image lazy-load='true' class="cooperation-brand-img" src='../../images/index/cooperation-brand-item7.png'></image>
+            </view>
+
+            <view class="cooperation-brand-item no-border-right">
+
+                <image lazy-load='true' class="cooperation-brand-img" src='../../images/index/cooperation-brand-item8.png'></image>
+            </view> -->
+
+        </view>
+
+        <view class="bg" style="height:20rpx;"></view>
+
+    </view>
+</view>

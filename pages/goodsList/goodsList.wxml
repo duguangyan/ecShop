@@ -1,0 +1,107 @@
+<!--加载组件  -->
+<mainloading modal-show="{{modalShow}}" />
+
+<view class="search-box">
+    <view class="search-input-box">
+
+        <view>
+            <!-- <image></image> -->
+            <input value='{{searchValue}}' bindconfirm="searchItem" bindinput='getSearchValue' confirm-type="search" placeholder='请输入要搜索的商品' placeholder-class="fs28"></input>
+        </view>
+
+    </view>
+
+    <view bindtap='searchItem' class="search-input-btn" hover-class="hover-style">
+        <text>搜索</text>
+    </view>
+
+</view>
+
+<!--筛选栏  -->
+<view class="filter-section border-top border-bottom fs30">
+
+    <view bindtap='sortTap' hover-class="hover-click" data-current="default" class="{{filterSelect === 'default' ? 'filter-selected' : ''}} filter-all">全部</view>
+    <view bindtap='sortTap' hover-class="hover-click" data-current="{{filterSelect == 'price-asc' ? 'price-desc':'price-asc'}}" class="{{filterSelect == 'price-asc' || filterSelect == 'price-desc' ? 'filter-selected' : ''}} filter-price border-left-right flex flex-center">
+        <view class="mgr-20 ">价格</view>
+        <view>
+            <view class="{{filterSelect == 'price-asc'? 'arrow-up-select' : '' }} arrow-up"></view>
+            <view class="{{filterSelect == 'price-desc'? 'arrow-down-select' : '' }} arrow-down"></view>
+        </view>
+
+    </view>
+    <view bindtap='optionsPage' hover-class="hover-click" class="filter-type flex flex-center">
+        <view class="{{ filterTag.length !== 0  ? 'filter-selected' : ''}} mgr-20">筛选</view>
+        <view>
+            <view class="arrow-down"></view>
+        </view>
+
+    </view>
+
+</view>
+
+
+<view class="filter-tags-list">
+
+    <block wx:for="{{filterTag}}" wx:key="{{i}}">
+
+        <view class="filter-tag">
+            <text>{{item.sub[0].text}}</text>
+            <text class="fs28" data-del="{{item.value}}"> ×</text>
+        </view>
+
+    </block>
+
+</view>
+
+<view class="goods-list-box">
+
+
+    <scroll-view scroll-y class="scroll-box" style="height:100%;">
+
+        <!-- 数据为空 -->
+        <view wx:if="{{noGoods}}" class="text-center">
+            <image style="width:110rpx;height:119rpx;padding:240rpx 0 40rpx;" src="../../images/no_goods.png"></image>
+            <view>
+                <text class="text-999 fs34">没有相关搜索记录哦</text>
+            </view>
+        </view>
+
+        <view class="goods-list">
+
+            <block wx:for="{{itemlist}}" wx:key="{{i}}">
+
+
+                <navigator open-type='navigate' url="../goodsDetail/goodsDetail?id={{item.id}}" class="goods-list-item">
+                    <view class='gooods-img-box'>
+                        <image src="{{item.goods_img_url}}"></image>
+                    </view>
+                    <view class="goods-info-box">
+                        <view class="goods-title fs28">
+                            <view>
+                                <text>{{item.name}} </text>
+                                <text>{{item.sell_pt}}</text>
+                            </view>
+                        </view>
+
+                        <view class="good-price fs28">
+                            <text class="theme-color">￥{{item.shop_price}}</text>
+                            <text class="fs24">{{}}</text>
+                        </view>
+
+                    </view>
+                </navigator>
+
+            </block>
+
+
+
+        </view>
+
+        <loading modal-text="加载更多" modal-show="{{shopLoading}}" />
+        <view class="loading complete fs28 bold" hidden="{{!shopLoadingComplete}}">已加载全部</view>
+
+
+
+    </scroll-view>
+
+</view>

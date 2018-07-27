@@ -1,0 +1,81 @@
+<view>
+    <image src="https://static.yidap.com/miniapp/banner2.png" style='width:100%;height:100%;' mode='widthFix'></image>
+
+    <!--介绍 S  -->
+    <view class="section-box">
+
+        <view class="section-item">
+            <image src="../../images/icons/find_1.png"></image>
+            <view class="section-item-title fs35 bold-800">
+                <text>专</text>
+            </view>
+
+            <view>
+                <text class="text-666">数百名资深专业皮革辅料买手 </text>
+            </view>
+        </view>
+
+        <view class="section-item">
+            <image src="../../images/icons/find_2.png"></image>
+            <view class="section-item-title fs35 bold-800">
+                <text>快</text>
+            </view>
+
+            <view>
+                <text class="text-666">3分钟响应、3小时反馈、8小时内找到 </text>
+            </view>
+        </view>
+
+        <view class="section-item">
+            <image src="../../images/icons/find_3.png"></image>
+            <view class="section-item-title fs35 bold-800">
+                <text>好</text>
+            </view>
+
+            <view>
+                <text class="text-666">与国内正规工厂合作,质量有保障</text>
+            </view>
+        </view>
+
+        <view class="section-item">
+            <image src="../../images/icons/find_4.png"></image>
+            <view class="section-item-title fs35 bold-800">
+                <text>省</text>
+            </view>
+
+            <view>
+                <text class="text-666">平台大批量采购,省时省心更省钱</text>
+            </view>
+        </view>
+
+    </view>
+
+    <!--介绍 E  -->
+
+    <view class="now-btn">
+        截止当前
+    </view>
+
+
+    <view class="free-service flex space-around text-666 fs30">
+        <view>提供服务<text class="text-theme">{{serviceData.service_num || ''}}</text> 次</view>
+        <view>提供服务<text class="text-theme">{{serviceData.people_num || ''}}</text>人</view>
+    </view>
+
+
+    <view class="together-box">
+        <button bindtap='goFind'>立即找料</button>
+    </view>
+
+     <view class="recharge-box">
+        <button bindtap='goReCharge'>去充值</button>
+    </view>
+
+    <view bindtap='contact' class="text-theme contact">
+        <text class="iconfont icon-dianhua"></text>
+        <text>联系小鹿找料：400-8088-156</text>
+    </view>
+
+
+
+</view>

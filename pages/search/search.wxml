@@ -1,0 +1,38 @@
+<view class="search-box">
+    <view class="search-input-box">
+
+        <view>
+            <!-- <image></image> -->
+            <input auto-focus='true' bindconfirm="searchItem" bindinput='getSearchValue' confirm-type="search" placeholder='请输入要搜索的商品' placeholder-class="fs28"></input>
+        </view>
+
+    </view>
+
+    <view hover-class="hover-style" bindtap='searchItem'  class="search-input-btn">
+        <text>搜索</text>
+    </view>
+
+</view>
+
+<view wx:if="{{historyStatus}}" class="recently-searched-box fs28">
+    <view class="recently-searched-title pdl-20">
+        最近搜索
+    </view>
+
+    <view class="recently-searched-list">
+
+        <block wx:for="{{searchHistory}}" wx:key="{{i}}">
+            <view bindtap='searchItem' data-search="{{item}}" class="recently-searched-list-item border-bottom ofh" hover-class="hover-click">
+               {{item}}
+            </view>
+        </block>
+
+
+
+    </view>
+</view>
+
+<view class="recently-searched-clean theme-color fs30">
+    <text bindtap='clearHistory' wx:if="{{historyStatus}}">清除搜索历史</text>
+    <text wx:if="{{!historyStatus}}">没有搜索历史</text>
+</view>

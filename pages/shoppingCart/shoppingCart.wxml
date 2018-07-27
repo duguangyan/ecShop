@@ -1,0 +1,126 @@
+<view wx:if="{{!emptyCrat && defaultStatus }}" class="mgb-100">
+    <view class="container">
+        <view class="flex bg-gray h90 lh80 fs30 cell-padding flex-end text-theme border-bottom" style="background:#F2F2F2;">
+            <view bindtap='changeStatus' wx:if="{{!deleteStatus}}" class="pdr-36  pdl-30 bold">
+                <text>编辑</text>
+            </view>
+
+            <view bindtap='changeStatus' wx:if="{{deleteStatus}}" class="pdr-36  pdl-30 bold">
+                <text>完成</text>
+            </view>
+        </view>
+
+        <block wx:for="{{cartList}}" wx:key="{{i}}" wx:for-index="i">
+            <view hidden="{{i === 0}}" style="background:#F2F2F2;height:20rpx;"></view>
+            <view>
+                <checkbox-group bindchange="goodsSelect">
+                    <view class="goods-cart border-bottom">
+                        <!--公司选择按钮  -->
+                        <view wx:if="{{!deleteStatus}}" class="selected-btn isSelected">
+                            <text bindtap='checkSection' data-i="{{i}}" hidden='{{!item.checked_section}}' class="iconfont icon-dui fs40 pd-20 text-theme"></text>
+                            <text bindtap='checkSection' data-i="{{i}}" hidden='{{item.checked_section}}' class="iconfont icon-yuan fs40 pd-20 text-eb"></text>
+                        </view>
+
+                        <view wx:if="{{deleteStatus}}" class="selected-btn isSelected">
+                            <text bindtap='checkSectionDel' data-i="{{i}}" hidden='{{!item.del_checked_section}}' class="iconfont icon-dui fs40 pd-20 text-theme"></text>
+                            <text bindtap='checkSectionDel' data-i="{{i}}" hidden='{{item.del_checked_section}}' class="iconfont icon-yuan fs40 pd-20 text-eb"></text>
+                        </view>
+
+
+                        <view class="goods-corporate-name fs30 ellipsis">{{item.shop_name}}</view>
+                    </view>
+
+                    <block wx:for="{{item.skus}}" wx:key="*this" wx:for-index="j">
+                        <view class="goods-item border-bottom">
+                            <!--单个商品选择  -->
+                            <view wx:if="{{!deleteStatus}}">
+                                <text bindtap='checkSectionChild' data-i="{{i}}" data-j="{{j}}" hidden='{{!item.checked_one}}' class="iconfont icon-dui fs40 pd-20 text-theme"></text>
+                                <text bindtap='checkSectionChild' data-i="{{i}}" data-j="{{j}}" hidden='{{item.checked_one}}' class="iconfont icon-yuan fs40 pd-20 text-eb"></text>
+                            </view>
+
+                            <view wx:if="{{deleteStatus}}">
+                                <text bindtap='checkSectionChildDel' data-i="{{i}}" data-j="{{j}}" hidden='{{!item.del_checked_one}}' class="iconfont icon-dui fs40 pd-20 text-theme"></text>
+                                <text bindtap='checkSectionChildDel' data-i="{{i}}" data-j="{{j}}" hidden='{{item.del_checked_one}}' class="iconfont icon-yuan fs40 pd-20 text-eb"></text>
+                            </view>
+
+                            <view class="goods-item-info">
+                                <navigator open-type='navigate' url="../goodsDetail/goodsDetail?id={{item.product_id}}">
+                                    <image class="radius-10" src="{{item.goods_img_url}}"></image>
+                                </navigator>
+                                <view class="flex flex-col flex-1 align-s">
+                                    <navigator open-type='navigate' url="../goodsDetail/goodsDetail?id={{item.product_id}}" class="fs28 ellipsis-line2" style="height:74rpx;line-height:37rpx;">
+                                        {{item.sku_name}}
+                                    </navigator>
+                                    <view class="fs22 text-gray ellipsis">
+                                        <text hidden="{{!item.sale_props_str.length}}" class="mgr-30">{{item.sale_props_str}}</text>
+                                        <text>型号: {{item.sku_sn}}</text>
+                                    </view>
+                                    <view style='width:100%;'>
+                                        <view class="flex">
+                                            <view class="text-theme">￥{{item.shop_price + '/' + item.unit_name}}</view>
+                                            <view class="border flex input-btn">
+                                                <text bindtap='min' data-i="{{i}}" data-j="{{j}}" data-cartid="{{item.cart_id}}" class="iconfont icon-jian1 fs26 lh50"></text>
+                                                <input class="h50" type="number" bindblur="change" data-i="{{i}}" data-j="{{j}}" data-cartid="{{item.cart_id}}" value='{{item.number}}'></input>
+                                                <text bindtap='add' data-i="{{i}}" data-j="{{j}}" data-cartid="{{item.cart_id}}" class="iconfont icon-jia1 fs26 lh50"></text>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </block>
+                </checkbox-group>
+            </view>
+        </block>
+
+    </view>
+
+    <view wx:if="{{!deleteStatus}}" class="bottom-fixed border-top shopping-cart-bottom flex fs30">
+
+        <view class="mgl-20" bindtap='checkAll'>
+            <text hidden='{{!checked_all}}' class="iconfont icon-dui fs40 pdr-20 text-theme"></text>
+            <text hidden='{{checked_all}}' class="iconfont icon-yuan fs40 pdr-20 text-eb"></text>
+            <text class="pd-20">全选</text>
+        </view>
+
+        <view class="flex">
+            <view>
+                <text>合计：</text>
+                <text class="text-theme"> ￥ {{totlePrice}}</text>
+            </view>
+            <view bindtap='settlementSubmit' hover-class='hover-style' class="settlement-btn bg-theme text-white {{haschecked ? '':'disabled'}}">结算</view>
+        </view>
+
+    </view>
+
+    <view wx:if="{{deleteStatus}}" class="bottom-fixed border-top shopping-cart-bottom flex fs30">
+
+        <view class="mgl-20" bindtap='checkAllDel'>
+            <text hidden='{{!del_checked_all}}' class="iconfont icon-dui fs40 pdr-20 text-theme"></text>
+            <text hidden='{{del_checked_all}}' class="iconfont icon-yuan fs40 pdr-20 text-eb"></text>
+            <text class="pd-20">全选</text>
+        </view>
+
+        <view class="flex">
+            <view bindtap='deleteSubmit' class="settlement-btn bg-theme text-white">删除</view>
+        </view>
+
+    </view>
+
+
+</view>
+
+<view wx:if="{{emptyCrat}}" class="text-center ofh">
+    <!-- <navigator hover-class='none' style="margin-top:400rpx;" open-type='navigate' url="../goodsList/goodsList"> -->
+    <view hover-class='none' style="margin-top:400rpx;" open-type='navigate' url="../goodsList/goodsList">
+        <view>
+            <image mode='widthFix' style="width:176rpx;" src='../../images/shopping_cart.png'></image>
+        </view>
+
+        <view class="text-999 fs30 mgt-14">把商品添加到购物车吧</view>
+
+    </view>
+</view>
+
+
+<mainloading modal-show="{{modalShow}}" />

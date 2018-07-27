@@ -1,0 +1,169 @@
+.container {
+    background:#54A5F4;
+}
+image.poster {
+    display: block;
+    width: 750rpx;
+     background: #54A5F4;
+}
+
+.poster-1 {
+    /* height: 532rpx; */
+}
+
+.poster-2 {
+    /* height: 782rpx; */
+}
+
+.go-detail {
+    position: absolute;
+    top: 186rpx;
+    /* left: 0; */
+    right: 110rpx;
+    /* margin: 0 auto; */
+    width: 284rpx;
+    height: 78rpx;
+    background: transparent;
+     /* background: rgba(0,0,0,0.6);  */
+}
+
+.call-phone{
+    position: absolute;
+    bottom: 74rpx;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    height: 76rpx;
+    width: 550rpx;
+    /* background: rgba(0,0,0,.7); */
+}
+
+.bg-color {
+    height: 122rpx;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background: #54A5F4 url('https://static.yidap.com/miniapp/active/active-page-3-626.jpg') no-repeat;
+    background-size: 750rpx;
+}
+
+/*时间限制  */
+
+.limited-time {
+    padding: 30rpx;
+}
+
+/*活动结束按钮  */
+.end-btn {
+    background: gray;
+    color:#FFF;
+    border-radius: 10rpx;
+    padding: 0 10rpx;
+}
+
+/*抢购信息按钮  */
+
+.limited-box {
+    color: #CC232A;
+    font-size: 40rpx;
+}
+
+.limited-box button {
+    margin-left: 34rpx;
+    margin-right: 0;
+    font-weight: 600;
+    color: #cb1522;
+    /* background: #FEFA7C; */
+    background: linear-gradient(90deg, #ffff81 0%, #ffd23b 80%);
+}
+
+/*活动结束显示  */
+
+.limited-end {
+    display: inline-block;
+    padding: 0 20rpx;
+    border-radius: 10rpx;
+    font-size: 40rpx;
+    /* color: #fefa7c; */
+    color:#FFF;
+    background: #605F5F;
+}
+
+/*购买弹窗  */
+
+.purchase-box {
+    width: 750rpx;
+    height: auto;
+    min-height: 929rpx;
+    background: #fff;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+    /* transform: translateY(700rpx); */
+    transition: all 0.33s;
+}
+
+.slide-up {
+    transform: translateY(0);
+}
+
+.slide-down {
+    transform: translateY(1300rpx);
+}
+
+/*商品信息  */
+
+.item-info-box {
+    align-items: flex-end;
+    padding: 52rpx 50rpx 38rpx;
+}
+
+.item-info-box image {
+    display: block;
+    margin-right: 30rpx;
+}
+
+/*关闭按钮  */
+
+.close-box {
+    padding: 30rpx;
+    position: absolute;
+    right: 0rpx;
+    top: 0rpx;
+}
+
+/*地址  */
+
+.address-box {
+}
+
+/*购买数量  */
+
+.num-box {
+    width: 250rpx;
+    text-align: center;
+}
+
+.num-box input {
+    width: 86rpx;
+    height: 70rpx;
+    background: #f8f8f8;
+}
+
+.num-box view {
+    width: 76rpx;
+    height: 70rpx;
+    background: #f8f8f8;
+}
+
+/*抢购按钮  */
+
+.purchase-btn button {
+    margin-top: 50rpx;
+    background: #f63536;
+    color: #fff;
+    font-size: 32rpx;
+    border-radius: 220rpx;
+}

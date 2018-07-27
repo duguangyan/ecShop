@@ -1,0 +1,5 @@
+{
+    "usingComponents": {
+        "mainloading": "../../component/mainLoading/mainLoading"
+    }
+}

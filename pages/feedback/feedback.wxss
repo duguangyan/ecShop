@@ -1,0 +1,23 @@
+page {
+    background: #F1F2F6;
+}
+
+.form-style {
+    padding: 26rpx 20rpx;
+    background: #FFF;
+}
+
+/* .form-style view, .form-style .textarea{
+    background: #FFF;
+} */
+
+.textarea {
+    width: 100%;
+}
+
+.send-btn {
+    width: 690rpx;
+    margin-top: 126rpx;
+    background: #C91A29;
+    color: #FFF;
+}

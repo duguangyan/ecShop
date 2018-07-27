@@ -1,0 +1,43 @@
+.shop-btn {
+    width: 320rpx;
+    background: #fefefe;
+    font-size: 30rpx;
+}
+
+.order-btn {
+    width: 320rpx;
+    background: #fefefe;
+    font-size: 30rpx;
+}
+
+/*会员框  */
+
+.member-section {
+    width: 750rpx;
+    height: 204rpx;
+    background: url('https://static.yidap.com/miniapp/find/member-bg.png') no-repeat;
+    background-size: 750rpx 204rpx;
+}
+
+.member-section .avart {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    margin: 20rpx 30rpx 20rpx 20rpx;
+    overflow: hidden
+}
+
+.member-section .avart image {
+    width: 120rpx;
+    height: 120rpx;
+}
+
+.member-section .info {
+    display: flex;
+    height: 120rpx;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 30rpx;
+    
+}
+

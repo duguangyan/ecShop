@@ -1,0 +1,26 @@
+<view class="cell-padding flex h90 fs36 border-bottom mgt-14">
+    <text class="bold">支付总额</text>
+    <text class="fs28 text-theme bold"> {{amount ? '￥' + amount : ''}}</text>
+</view>
+<view class="cell-padding flex flex-start h90">
+    <text class="bold">订单编号：</text>
+    <text class="fs26  bold">{{sn || ''}}</text>
+</view>
+
+
+<view class="fs28 h110 mgt-30 cell-padding flex">
+
+   
+        <image mode='widthFix' src="../../images/icons/wx_pay.png" style="width:64rpx;height:64rpx;margin-right:24rpx;"></image>
+        <text class="bold">微信</text>
+    
+
+    <view class="flex-1 text-right">
+        <text class="iconfont icon-dui fs40 pd-20 text-theme"></text>
+    </view>
+
+</view>
+
+<view class="bottom-fixed">
+    <button hover-class='hover-style' bindtap='payment' data-id="{{id}}" class="bg-theme text-white h110 lh110 fs30 {{ hasSubmit ? 'disabled-c' : ''}}">使用微信支付支付 {{ amount ? '￥'+ amount : ''}}</button>
+</view>

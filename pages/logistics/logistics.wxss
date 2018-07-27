@@ -1,0 +1,52 @@
+.introduce-section {
+    padding: 24rpx 50rpx 0;
+}
+
+.u-line::after{
+    content: '';
+    display: block;
+    width: 70rpx;
+    border-bottom: 2rpx #c81a29 solid;
+    position: absolute;
+    left: 50%;
+    margin-left: -35rpx; 
+}
+
+.introduce-section-box {
+    margin-top: 30rpx;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.introduce-section-box > view {
+    width: 305rpx;
+    height: 404rpx;
+    background: #F2F2F2;
+    margin-bottom: 40rpx;
+    border-radius: 12rpx;
+
+}
+
+.introduce-item {
+ padding: 30rpx 0 0;
+}
+
+.introduce-item-img image {
+    width: 245rpx;
+    height: 126rpx;
+}
+
+.introduce-item-title {
+    font-size: 28rpx;
+    line-height: 60rpx;
+    font-weight: 600;
+}
+
+.introduce-item-text {
+
+    padding: 0 18rpx;
+    font-size: 24rpx;
+    line-height: 42rpx;
+    text-align: left;
+}

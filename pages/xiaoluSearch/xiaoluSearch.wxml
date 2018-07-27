@@ -1,0 +1,138 @@
+<form class="fs30" bindsubmit="formSubmit" report-submit>
+
+    <view>
+        <view class="lh90 bold cell-padding fs36 title-bg">
+            物料信息
+        </view>
+
+        <view class="cell-padding lh90 flex border-bottom">
+            <view class="width-166">物料类型：</view>
+            <input name="cname" placeholder-class="text-right" placeholder='请输入物料类型' style="text-align:right"></input>
+        </view>
+
+        <view class="cell-padding lh90 flex border-bottom">
+            <view class="width-166">价格范围：</view>
+            <input name="price_range" placeholder-class="text-right" placeholder='请输入价格范围' style="text-align:right"></input>
+        </view>
+
+        <view class="pd-20 flex align-start">
+            <view class="width-166">
+                <text class="text-theme">*</text> 描 述 ：</view>
+
+            <textarea class="flex-1 height-200" name="field_desc" value="{{descValue}}" placeholder='(注：请详细描述物料的名称、用途、材质、交货时间)'>
+            </textarea>
+
+
+        </view>
+
+    </view>
+
+
+
+    <!--找料方式  -->
+    <view class="fs30">
+        <view class="lh90 bold cell-padding fs36 title-bg">
+            找料方式 
+            <input class="hidden" value="{{selcetTabNum}}" name="sampling_type"></input>
+        </view>
+
+        <!--选择找料方式  -->
+        <view>
+
+            <view class="flex space-around lh110 border-bottom">
+                <view bindtap='selcetTab' data-id="1" class="flex">
+                    <text hidden='{{selcetTabNum != 1}}' class="iconfont icon-dui fs40 text-theme"></text>
+                    <text hidden='{{selcetTabNum == 1}}' class="iconfont icon-yuan fs40 text-eb"></text>
+                    <text class="mgl-20"></text> 图片找料
+                </view>
+
+                <view bindtap='selcetTab' data-id="2" class="flex">
+                    <text hidden='{{selcetTabNum != 2}}' class="iconfont icon-dui fs40 text-theme"></text>
+                    <text hidden='{{selcetTabNum == 2}}' class="iconfont icon-yuan fs40 text-eb"></text>
+                    <text class="mgl-20">上门取样</text>
+                </view>
+
+                <view bindtap='selcetTab' data-id="3" class="flex">
+                    <text hidden='{{selcetTabNum != 3}}' class="iconfont icon-dui fs40 text-theme"></text>
+                    <text hidden='{{selcetTabNum == 3}}' class="iconfont icon-yuan fs40 text-eb"></text>
+                    <text class="mgl-20">寄送样品</text>
+                </view>
+
+            </view>
+
+            <!--1图片找料  -->
+
+            <view hidden='{{selcetTabNum != 1}}' class="pd-20 upload-view flex">
+
+                <view wx:for="{{files}}" data-id="{{index}}" wx:key="{{i}}" bindtap='chooseImage' class="relative">
+                    <image src='{{item.url}}'></image>
+                    <image data-id="{{index}}" catchtap='deleteItem' wx:if="{{item.pct}}" style="width:44rpx;height:44rpx;position:absolute;right:0;top:0rpx;background: transparent;z-index:999;" src='../../images/icons/del.png'></image>
+
+                    <view wx:if="{{item.pct}}" style="width:200rpx;height:200rpx;background:rgba(0,0,0,0.4);position:absolute;left:0;top:0;text-align:center;line-height:200rpx;color:white;font-size:30rpx;">{{item.pct}}</view>
+                 <input class="hidden" value="{{item.images_id}}" name="{{'img' + ( index +1 )}}"></input>
+                </view>
+
+            </view>
+
+            <!--寄送样品  -->
+
+            <view hidden='{{selcetTabNum != 3}}' class="">
+                <view class=" lh90 border-bottom cell-padding flex align-start">
+                    <text class="width-166">联系人：</text>
+                    <text class="flex-1">田先生</text>
+                </view>
+                <view class="lh90 border-bottom cell-padding flex align-start">
+                    <text class="width-166">联系电话：</text>
+                    <text class="flex-1">18320985894</text>
+                </view>
+                <view class="pd-20 flex align-s">
+                    <text class="width-166">寄样地址：</text>
+                    <text class="flex-1"> 广东省广州市花都区镜湖大道南33号财富工业园7号楼2层</text>
+                </view>
+            </view>
+
+        </view>
+
+    </view>
+
+    <!--收货地址  -->
+    <view class="fs30">
+        <view class="lh90 bold cell-padding fs36 title-bg">
+            收货地址
+             <input class="hidden" value="{{addressId}}" name="address_id"></input>
+        </view>
+
+        <view class="border-bottom cell-padding address flex flex-start">
+            <text class="iconfont icon-dizhi fs40 text-gray mgr-20"></text>
+
+            <navigator open-type='navigate' url="../consigneeAddress/consigneeAddress" hidden='{{!defaultAddress}}' class="flex-1 address-info fs30">
+
+                <view class="flex">
+                    <text>收货人： {{defaultAddress.consignee}}</text>
+                    <text>{{defaultAddress.mobile}}</text>
+
+                </view>
+
+                <view>
+                    <text>收获地址：</text>
+                    <text>{{defaultAddress.city_str}} {{defaultAddress.address}}</text>
+                </view>
+
+            </navigator>
+
+            <navigator open-type='navigate' url="../newAddress/newAddress?type=new" hidden='{{defaultAddress}}' class="text-666 h100 lh100 flex-1">
+                点击添加收货地址
+            </navigator>
+
+        </view>
+
+    </view>
+
+
+    <!--提交按钮  -->
+    <view class="cell-padding submit-form">
+        <button formType="submit">确认</button>
+    </view>
+
+
+</form>

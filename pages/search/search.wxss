@@ -1,0 +1,70 @@
+.search-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32rpx 34rpx 20rpx 20rpx;
+}
+
+.search-box .search-input-box {
+    flex: 1;
+    margin: 0 18rpx;
+    padding-left: 60rpx;
+    border-radius: 10rpx;
+    background: #e5e5e5 url(https://static.yidap.com/miniapp/search.png) no-repeat 20rpx center;
+    background-size: 30rpx 30rpx;
+}
+
+.search-input-box input {
+    height: 64rpx;
+}
+
+.search-box .search-input-btn {
+    width: 90rpx;
+    height: 60rpx;
+    border-radius: 10rpx;
+    background: #C81A29;
+    color: #fff;
+    font-size: 30rpx;
+    text-align: center;
+    line-height: 60rpx;
+}
+
+/*最近搜索  */
+
+.recently-searched-box {
+    background: #f2f2f2;
+    padding: 54rpx 0 50rpx;
+}
+
+.recently-searched-title {
+    line-height: 60rpx;
+}
+
+.recently-searched-list {
+   
+    background: #fff;
+    /* border-top: 1rpx #C8C7CC solid;
+    border-bottom: 1rpx #C8C7CC solid; */
+}
+
+.recently-searched-list-item {
+    padding:0 30rpx 0 20rpx;
+    line-height: 86rpx;
+    /* border-bottom: 1rpx #C8C7CC solid; */
+}
+
+.recently-searched-list-item:last-of-type::after {
+    border-top: 0;
+}
+
+/*清除  */
+
+.recently-searched-clean {
+    text-decoration: underline;
+    text-align: center;
+    
+}
+
+.recently-searched-clean text {
+    line-height: 80rpx;
+}

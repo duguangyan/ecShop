@@ -1,0 +1,83 @@
+<view class="fs30">
+
+    <view class="flex pd-20 lh50 h50 bold">
+
+
+        <text>{{packageData.packageData.name}}</text>
+
+
+        <text wx:if="{{packageData.packageData.mounth}}"> 有效期： {{packageData.packageData.mounth}} 月</text>
+
+
+    </view>
+
+    <view class="bg h20"></view>
+
+    <!--订单信息  -->
+    <view>
+
+        <view class="pd-20 lh60 border-bottom">
+            <view>
+                <text class="text-666"> 订单编号：</text>
+                <text>{{packageData.order_no}}</text>
+            </view>
+            <view>
+                <text class="text-666">下单时间：</text>
+                <text>{{packageData.updated_at}}</text>
+            </view>
+        </view>
+
+        <view class="pd-20 lh60 border-bottom">
+            <text class="text-666">支付方式: </text>
+            <text wx:if="{{packageData.pay_type == 2}}">微信支付</text>
+            <text wx:if="{{packageData.pay_type == 1}}">支付宝支付</text>
+
+        </view>
+
+
+        <view class="pd-20 lh50">
+
+            <view>
+                <text class="text-666"> 发票类型：</text>
+                <text>普通电子发票</text>
+                <text class="fs26 border radius-10 mgl-30 pdl-20 pdr-20 hidden">查看发票</text>
+            </view>
+            <view>
+                <text class="text-666">发票抬头：</text>
+                <text>{{packageData.ticket_name || ''}}</text>
+            </view>
+
+        </view>
+
+    </view>
+
+
+    <view class="bg h20"></view>
+
+    <!--套餐价格  -->
+
+    <view>
+        <view class=" pd-20 border-bottom">
+            <view class="flex">
+                <view class="text-666">套餐价格</view>
+                <view>{{packageData.packageData.pay_price ? '￥' + packageData.packageData.pay_price : ''}}</view>
+            </view>
+
+            <view wx:if="{{packageData.distribution_address}}" class="flex">
+                <view class="text-666">配送价格</view>
+                <view>{{packageData.distribution_price ? '￥' + packageData.distribution_price : ''}}</view>
+            </view>
+
+        </view>
+
+        <view class="flex flex-end pd-20 border-bottom">
+
+            <text>实际价格：</text>
+            <text class="text-theme">{{packageData.pay_price ? '￥' + packageData.pay_price : ''}}</text>
+        </view>
+
+
+
+    </view>
+
+</view>

@@ -1,0 +1,188 @@
+<!--pages/salesPromotion/salesPromotion.wxml-->
+<view class='salesPromotion {{isShow ? "filter-b6" : ""}}'>
+   
+
+   <scroll-view 
+    scroll-with-animation=true
+    scroll-top="{{scrollTop}}" 
+    scroll-into-view="{{toView}}"
+    scroll-y style="height: 100vh;" 
+    bindscroll='bindscroll'> 
+      <!-- 头部图片 -->
+      <view class='top-img'>
+        <image src='https://static.yidap.com/miniapp/sales/dgy-banner1.jpg'></image>
+      </view> 
+      <!-- 中部nav -->
+
+      <view class=" sales-nav-top cf {{isPullDown ? 'pulldown' : ''}}">
+          <view wx:for='{{topNav}}' 
+            wx:key='this'
+            data-index='{{index}}' 
+            catchtap='topNavClick'>
+            <text class='{{topNavIndex == index?"sales-nav-top-ac":""}}'>{{item}}</text>
+          </view>
+      </view>
+      <view wx:if='{{isPullDown}}' style='height:80rpx;'>
+      
+      </view>
+      <view class='sales-nav'>  
+          <view id='advertising1'></view>
+          <view class='advertising'>
+            <image src='https://static.yidap.com/miniapp/sales/dgy-jinri.png'></image>
+          </view>
+          <scroll-view class='sales-nav-bottom-warp' scroll-x="true">
+            <view  class='sales-nav-bottom cf' style="width:{{(today_category.length * 170) +'rpx'}}">
+                <view wx:for='{{today_category}}' wx:key='this'  
+                data-index='{{index}}' 
+                data-id='{{item.id}}'
+                data-nav='1'
+                catchtap='bottomNavClick'>
+                  <text class="{{bottomNavIndex1 == index ? 'sales-nav-bottom-ac' : ''}}">{{item.name}}</text>
+                </view>
+            </view>
+          </scroll-view>
+      </view> 
+      <!-- 底部内容 -->
+      <view class='sales-content cf'>
+        <view bindtap='goodsInfo' data-id='{{item.id}}' class='sales-list btn-shadow cf' wx:for='{{todays}}' wx:key='this'>
+            <image lazy-load='{{true}}'  src='{{item.goods_img}}'></image>
+            <view class='sales-list-name'>
+              <text>{{item.name}}</text>
+            </view>
+            <view catchtap='snapUp' data-id='{{item.id}}'>
+              <view class='sales-list-price'>
+                <text>￥{{item.shop_price}}</text>
+                <text class='text-1'>￥{{item.market_price}}</text>
+              </view>
+              <view hidden='{{item.isOver}}' class='sales-list-btn'>
+                  <text>立即抢购</text>
+              </view>
+              <view hidden='{{!item.isOver}}' class='sales-list-btn is-snapUp' catchtap='snapUpOver'>
+                  <text>已抢完</text>
+              </view>
+            </view>
+            
+        </view>
+        
+      </view> 
+
+
+
+      <!-- // 热卖爆款 -->
+      
+      <view class='sales-nav'>  
+          <view id='advertising2'></view>
+          <view class='advertising' style='margin-top:30rpx;'>
+             <image src='https://static.yidap.com/miniapp/sales/dgy-remai.png'></image> 
+          </view>
+          <scroll-view class='sales-nav-bottom-warp' scroll-x="true">
+            <view class='sales-nav-bottom cf' style="width:{{(hot_category.length * 170) +'rpx'}}">
+                <view wx:for='{{hot_category}}' wx:key='this'  
+                data-index='{{index}}' 
+                data-id='{{item.id}}'
+                data-nav='2'
+                catchtap='bottomNavClick'>
+                  <text class="{{bottomNavIndex2 == index ? 'sales-nav-bottom-ac' : ''}}">{{item.name}}</text>
+                </view>
+            </view>
+
+            
+          </scroll-view>
+      </view> 
+      <!-- 底部内容 -->
+      <view class='sales-content cf'>
+        <view bindtap='goodsInfo' data-id='{{item.id}}' class='sales-list btn-shadow cf' wx:for='{{hots}}' wx:key='this'>
+            <image lazy-load='{{true}}'  src='{{item.goods_img}}'></image>
+            <view class='sales-list-name'>
+              <text>{{item.name}}</text>
+            </view>
+            <view catchtap='snapUp' data-id='{{item.id}}'>
+              <view class='sales-list-price'>
+                <text>￥{{item.shop_price}}</text>
+                <text class='text-2'>已售{{item.sale_volume}}件</text>
+              </view>
+              <view hidden='{{item.isOver}}' class='sales-list-btn'>
+                  <text>立即抢购</text>
+              </view>
+              <view hidden='{{!item.isOver}}' class='sales-list-btn is-snapUp' catchtap='snapUpOver'>
+                  <text>已抢完</text>
+              </view>
+            </view>
+            
+        </view>
+        
+      </view> 
+
+
+
+
+    <view class='show-all'>已显示全部</view>
+    <!-- <loading  wx:if='{{!isGetDatesFull}}' modal-text="加载更多" /> -->
+    <!-- <view>加载中...</view> -->
+  </scroll-view>
+ 
+</view>
+
+
+
+<view class="purchase-box {{isShow ? 'slide-up' : 'slide-down'}}" catchtouchmove="preventD">
+
+    <!--商品信息  -->
+
+    <view class='item-info-box flex flex-start relative'>
+
+        <view bindtap='goodsInfo' data-id='{{id}}'>
+            <image style="width:250rpx;height:250rpx;background:#fefefe;" src='{{itemInfo.detail.goods_img_url}}'></image>
+        </view>
+        <view class="fs30" style='position:relative'>
+            <view class='ellipsis-line2' style='position:absolute;top:-160rpx;width:320rpx;'>
+            {{itemInfo.name}}</view>
+            <view class="theme-color"> {{'￥' +itemInfo.detail.sku[0].shop_price + '/'+itemInfo.detail.sku[0].unit_name}}</view>
+            <view wx:if='{{itemInfo.total !=-1}}'>
+                库存{{itemInfo.total - itemInfo.sale_volume}} {{itemInfo.detail.sku[0].unit_name}}
+            </view>
+            <view wx:if='{{itemInfo.total ==-1}}'>
+                库存足量
+            </view>
+        </view>
+
+        <view bindtap='close' class="close-box">
+            <text class="iconfont icon-chacha fs50 text-gray"></text>
+        </view>
+    </view>
+
+    <!--地址信息  -->
+    <view bindtap='dealAddress' data-url="{{defaultAddress? '../consigneeAddress/consigneeAddress' : '../newAddress/newAddress?type=new'}}" class="flex pd-30 address-box">
+        <text class="iconfont icon-genggaishouhuodizhi fs50 text-gray mgr-14"></text>
+        <view hidden="{{!defaultAddress}}" class="flex-1 fs30">{{defaultAddress.city_str}} {{defaultAddress.address}}</view>
+        <view hidden="{{defaultAddress}}" class="flex-1 fs30">点击添加收货地址</view>
+        <text class="iconfont icon-jiantou fs40 text-gray"></text>
+    </view>
+    <view class='fs24 pdl-20' style='color:#666;'>
+      （因活动火爆,所有订单将在下单后48小时之内完成发货）
+    </view>
+    <!--数量按钮  -->
+    <view class="flex pd-30 mgt-60">
+        <view class='fs30 bold'>购买数量
+            <text class="fs24" wx:if='{{itemInfo.daily_limit!=-1}}'>（单日限购{{itemInfo.daily_limit}}{{itemInfo.detail.sku[0].unit_name}}）</text>
+            <text class="fs24" wx:if='{{itemInfo.daily_limit==-1}}'>（不限购）</text>
+        </view>
+            
+        <view class="flex fs50 num-box">
+            <view bindtap='min'>-</view>
+            <input class="fs40" type='number' value='{{purchaseNum}}' maxlength='3' bindblur='change'></input>
+            <view bindtap='add'>+</view>
+        </view>
+    </view>
+
+    <view bindtap='goodsInfo' data-id='{{id}}' class="fs30 pd-30 flex">
+        <text>商品详情</text>
+        <text class="iconfont icon-jiantou text-gray"></text>
+    </view>
+
+
+    <!--抢购按钮  -->
+    <view class="pd-30 purchase-btn">
+        <button bindtap='purchase' class="{{submitBtn ? 'disabled-c' : ''}}">立即抢购</button>
+    </view>
+</view>

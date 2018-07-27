@@ -1,0 +1,85 @@
+/* component/toast/toast.wxss */
+
+/* .my-toast {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1010;
+    display: block;
+} */
+
+.my-toast-bd {
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    margin-left: 0 !important;
+    position: fixed;
+    z-index: 99999;
+    width: 240rpx;
+    min-height: 240rpx;
+    top: 360rpx;
+    left: 50%;
+    margin-left: -120rpx;
+    background: rgba(40, 40, 40, 0.75);
+    text-align: center;
+    border-radius: 10rpx;
+    color: #fff;
+    font-size: 32rpx;
+}
+
+.my-toast-icon {
+  margin: 44rpx 0 0;
+  display: block;
+}
+
+/*淡入动效  */
+.my-animate-fade-in {
+  -webkit-animation: fadeIn ease .3s forwards;
+          animation: fadeIn ease .3s forwards;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*淡出动效  */
+.my-animate-fade-out {
+  -webkit-animation: fadeOut ease .3s forwards;
+          animation: fadeOut ease .3s forwards;
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fs26 {
+    font-size: 26rpx;
+    text-align: center;
+}

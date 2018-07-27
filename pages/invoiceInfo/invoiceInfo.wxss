@@ -1,0 +1,64 @@
+page {
+    background: #f1f2f6;
+}
+
+.container {
+    background: #fff;
+}
+
+.spacing-view {
+    background: #f1f2f6;
+    height: 18rpx;
+}
+
+.type-tag > text {
+    display: inline-block;
+    padding: 14rpx 24rpx;
+    border: 1rpx #242328 solid;
+    border-radius: 10rpx;
+}
+
+.type-tag>.type-tag-selected {
+    color: #C81A29;
+    border-color: #C81A29;
+}
+
+.title-box {
+    padding: 24rpx 20rpx 4rpx;
+}
+
+.title-type {
+    display: flex;
+    padding: 27rpx 0;
+}
+
+.title-box input {
+    height: 80rpx;
+    padding: 0 20rpx;
+    margin-bottom: 19rpx;
+}
+
+/*行内对齐  */
+
+.section-head {
+    width: 180rpx;
+    text-align: right;
+}
+
+/*发票模板  */
+.template-invoice image{
+    width:750rpx;
+}
+
+/*提交按钮  */
+
+.submit-btn {
+    position: absolute;
+    left: 0;
+    bottom: 30rpx;
+    width: 100%;
+}
+
+.submit-btn button {
+    width: 690rpx;
+}

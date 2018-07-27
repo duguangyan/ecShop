@@ -1,0 +1,357 @@
+/*搜索栏 S  */
+
+.search-box {
+    display: flex;
+    width: 750rpx;
+    height: 96rpx;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999999;
+    background: rgba(200,26,41,1);
+}
+
+.search-box .search-box-left {
+    width: 126rpx;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    font-size: 24rpx;
+}
+
+.search-box .search-box-right {
+    flex: 1;
+    padding-right: 20rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.search-box .search-box-right .search-inner-box {
+    border-radius: 20rpx;
+    padding-left: 70rpx;
+    background: #fff url(https://static.yidap.com/miniapp/search.png) no-repeat 20rpx center;
+    background-size: 30rpx 30rpx;
+    position: relative;
+}
+
+.search-box .search-box-right .search-inner-box input {
+    height: 68rpx;
+}
+
+/*分类列表下拉  */
+
+.category-list {
+    position: absolute;
+    top: 96rpx;
+    left: 0;
+    z-index: 999;
+    text-align: center;
+    font-size: 28rpx;
+    font-weight: blod;
+    line-height: 100rpx;
+}
+
+.category-list>view {
+    float: left;
+}
+
+.category-list-first {
+    min-width: 180rpx;
+    background: #fff;
+}
+
+.category-list-second {
+    min-width: 180rpx;
+    background: #f4f5f7;
+}
+
+.category-list-first view:nth-of-type(n+1),
+.category-list-second view:nth-of-type(n+1) {
+    border-top: 1rpx #e5e5e5 solid;
+}
+
+.category-list-second view {
+    border-right: 1rpx #e5e5e5 solid;
+}
+
+/* .category-list-first view,.category-list-second view {
+    background: url(https://static.yidap.com/miniapp/bg-arrow-default.png) no-repeat 120rpx center;
+    background-size: 12rpx 12rpx;
+} */
+
+/*选中状态  */
+
+.category-list .category-selected {
+    color: #c81a29;
+    border-right: 0px;
+    background: url(https://static.yidap.com/miniapp/bg-arrow-selected.png) no-repeat right center;
+    background-size: 12rpx 12rpx;
+}
+
+.category-list-third {
+    width: 300rpx;
+    background: #f4f5f7;
+    font-size: 24rpx;
+    line-height: 100rpx;
+}
+
+.category-list-last {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.category-list-last view {
+    width: 50%;
+}
+
+.category-list-last view:nth-of-type(2n+1) {
+    background: url(https://static.yidap.com/miniapp/bg-spacing.png) center right no-repeat;
+    background-size: 2rpx 30rpx;
+}
+
+/*交易动态 S  */
+
+.transaction-news {
+    display: flex;
+    padding: 26rpx 0;
+}
+
+.transaction-news .transaction-news-icon {
+    position: relative;
+    width: 150rpx;
+}
+
+.transaction-news .transaction-news-icon image {
+    position: absolute;
+    left: 20rpx;
+    bottom: 0;
+}
+
+.transaction-news .transaction-news-text {
+    flex: 1;
+    padding: 0 110rpx 0 20rpx;
+    border-left: 2px #d7d7d7 solid;
+    color: #666;
+}
+
+/*导航列表  */
+
+.nav-list {
+    padding: 40rpx 34rpx 28rpx;
+    text-align: center;
+}
+
+.nav-list .nav-list-1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*特殊处理不满8个情况 S */
+
+.nav-list .nav-list-2 {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.nav-list .nav-list-2 navigator {
+    margin-right: 90rpx;
+}
+
+/*特殊处理不满8个情况 S */
+
+.nav-list .nav-list-icon {
+    width: 100rpx;
+    height: 100rpx;
+    /* margin-bottom: 10rpx；; */
+}
+
+.nav-list .nav-list-text {
+    font-size: 26rpx;
+    line-height: 56rpx;
+    color: #4f4f4f;
+}
+
+/* 服务列表 */
+
+.service-list {
+    display: flex;
+    padding: 20rpx;
+    padding-bottom: 0;
+    background: #f7f7f7;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.service-list>navigator {
+    width: calc(50% - 10rpx);
+    height: 170rpx;
+    margin-bottom: 20rpx;
+}
+
+.service-list>navigator>image {
+    width: 100%;
+    height: 100%;
+}
+
+/*推荐  */
+
+.recommend-list-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20rpx;
+    line-height: 30rpx;
+    font-size: 30rpx;
+}
+
+.recommend-list-nav .recommend-title {
+    padding-left: 20rpx;
+    border-left: 4rpx #c81a29 solid;
+    font-weight: 600;
+}
+
+.recommend-list-nav .recommend-more {
+    padding: 32rpx 0 24rpx 10rpx;
+}
+
+/*推荐列表  */
+
+.recommend-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.recommend-list view {
+    /* box-sizing: border-box; */
+}
+
+.recommend-list-left, .recommend-list-right {
+    box-sizing: border-box;
+}
+
+.recommend-list-left {
+    width: 375rpx;
+    border-right: 3rpx #fff solid;
+}
+
+.recommend-list-right {
+    width: 375rpx;
+    border-left: 3rpx #fff solid;
+}
+
+.recommend-list-item {
+    display: block;
+    height: 265rpx;
+    width: 100%;
+    position: relative;
+    border-top: 6rpx #fff solid;
+    overflow: hidden;
+}
+
+.recommend-list-item>image {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/*推荐描述  */
+
+.recommend-list-item-long {
+    height: 534rpx;
+}
+
+.recommend-list-item-long >image {
+    height: 534rpx;
+}
+
+/*合作品牌  */
+
+.cooperation-brand {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cooperation-brand .cooperation-brand-item {
+    width: 25%;
+    height: 134rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-top: 1rpx #e4e4e4 solid;
+    border-right: 1rpx #e4e4e4 solid;
+}
+
+.cooperation-brand .no-border-right {
+    border-right: 0;
+}
+
+.cooperation-brand .cooperation-brand-img {
+    width: 160rpx;
+    max-height: 100rpx;
+}
+
+/*交易动态部分  */
+.transaction-news {
+    display: flex;
+    padding: 26rpx 0;
+    border-bottom: 1px #d7d7d7 solid;
+}
+
+.transaction-news .transaction-news-icon {
+   position:relative;
+    width:150rpx;
+    height:34rpx;
+    background-color:#fff;
+    z-index: 9999
+}
+
+.transaction-news .transaction-news-icon image {
+    position: absolute;
+    left: 20rpx;
+    bottom: 0;
+}
+
+.transaction-news .transaction-news-text {
+    flex: 1;
+    padding: 0 110rpx 0 20rpx;
+    border-left: 2px #d7d7d7 solid;
+    color: #666;
+}
+@keyframes around {
+    from {
+      margin-left: 100%;
+    }
+    to {
+      margin-left: var(--marqueeWidth--);
+    }
+  }
+
+.marquee_container{
+  background-color: #fff;
+  height: 34rpx;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-left:40rpx;
+  border-left:1px solid #e2e2e2; 
+  margin-top: 4rpx;
+  margin-right:30rpx;
+}
+.marquee_container:hover{
+  animation-play-state: paused;
+}
+.marquee_text{
+  display: inline-block;
+  white-space: nowrap;
+  animation-name: around;
+  animation-duration: 50s;
+  animation-iteration-count: infinite;
+  animation-timing-function:linear;
+}

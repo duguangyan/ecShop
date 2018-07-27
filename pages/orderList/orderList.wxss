@@ -1,0 +1,8 @@
+page {
+    background: #F2F2F2;
+}
+
+view {
+    background: #FFF;
+}
+@import '../../template/orderList/orderList.wxss';

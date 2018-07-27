@@ -1,0 +1,7 @@
+page {
+    background: #f0f0f0;
+}
+
+view {
+    background: #fff;
+}

@@ -1,0 +1,70 @@
+page {
+    background: #F2F2F2;
+}
+
+.container {
+    background: #FFF;
+}
+
+.lh50 {
+    line-height: 50rpx;
+}
+.h50 {
+    height: 50rpx;
+}
+
+.goods-cart {
+    display: flex;
+    align-items: center;
+    min-height: 80rpx;
+    background: #FAFAFA;
+}
+
+.goods-cart .selected-btn {
+    padding: 20rpx 20rpx 20rpx 7rpx
+}
+
+.goods-item {
+    display: flex;
+    align-items: center;
+    padding: 24rpx 36rpx 20rpx 0;
+}
+
+.goods-item-info {
+    flex:1;
+    display: flex;
+}
+
+.goods-item image {
+    width: 180rpx;
+    height: 180rpx;
+    margin-right: 20rpx;
+}
+
+.input-btn {
+    border-radius: 6rpx;
+    text-align: center;
+}
+
+.input-btn text {
+    width: 54rpx;background: #F5FAFF;
+}
+
+.input-btn input {
+    width: 76rpx;
+    border-left: 1rpx #CBCBCB solid;
+    border-right: 1rpx #CBCBCB solid;
+}
+
+/*底部  */
+.shopping-cart-bottom {
+    height: 114rpx;
+     background: #FFF;
+}
+
+.settlement-btn {
+    width: 240rpx;
+    text-align: center;
+    line-height: 114rpx;
+    margin-left: 24rpx;
+}

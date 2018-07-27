@@ -1,0 +1,79 @@
+<!-- <timer/>  -->
+<!-- 倒计时 -->
+<image style="height:443rpx;width:750rpx;" src="https://static.yidap.com/miniapp/active.png"></image>
+
+<view class="text-center">
+    <text class="fs34 bold-700 lh80 " style="color:#FCD201;">今日剩余: <text class="{{remaining_num ? 'u' : ''}}">{{ remaining_num || '--'}}</text> 打</text>
+</view>
+
+<!--倒计时栏  -->
+<view style="min-height:70rpx;" class="flex flex-center">
+
+    <view class="fs30 text-white" wx:if="{{flashSaleBtn !== '今日已售罄'}}">{{ActiveTimeShow}}</view>
+    <view class="timer-box" wx:if="{{flashSaleBtn !== '今日已售罄'}}">
+        <view>{{hour}}</view>
+        <view>时</view>
+        <view>{{minute}}</view>
+        <view>分</view>
+        <view>{{second}}</view>
+        <view>秒</view>
+    </view>
+    <view bindtap='flashSale' data-type="{{flashSaleBtn}}" hover-class='hover-style' class="flash-sale-btn {{submitBtn ? 'disabled-c' : ''}}" wx:if="{{flashSaleBtn !== '今日已售罄' && is_order == 0}}">{{flashSaleBtn}}</view>
+
+    <!--用户已经抢购过了  -->
+    <view bindtap='flashSaleOut' class="flash-sale-btn" wx:if="{{flashSaleBtn !== '今日已售罄' && is_order == 1}}">已成功抢购</view>
+
+    <!--售罄情况  -->
+    <view wx:if="{{flashSaleBtn === '今日已售罄'}}" class="fs24 text-white bold-700">
+        <view class="flash-sale-out-btn">今日已售罄</view>
+        <text style="color:#FCD201;" class="text-theme fs24">24:00</text>重新开抢</view>
+</view>
+
+<!-- <view>显示剩余时间：{{wxTimer}}</view>
+
+<view>显示剩余秒数：{{wxTimerSecond}}</view> -->
+
+<!--地址栏目  -->
+<navigator bindtap='dealAddress' data-url="{{defaultAddress? '../consigneeAddress/consigneeAddress' : '../newAddress/newAddress?type=new'}}" class="address-box text-white">
+
+    <view class="address-title">收货地址:</view>
+
+    <view class="address-box-main flex">
+
+        <view>
+            <text class="iconfont icon-dizhi text-999 mgr-20 address-icon"></text>
+        </view>
+
+        <view class="flex-1" hidden='{{!defaultAddress}}'>
+
+            <view>
+                <view class="flex flex-start">
+                    <view>
+                        <text>联系人: </text>
+                        <text>{{defaultAddress.consignee}}</text> </view>
+                    <view class="mgl-40">{{defaultAddress.mobile}}</view>
+                </view>
+
+                <view>
+                    {{defaultAddress.city_str}} {{defaultAddress.address}}
+                </view>
+
+            </view>
+
+        </view>
+
+        <view class="flex-1" hidden='{{defaultAddress}}'>点击添加地址</view>
+
+    </view>
+
+
+
+
+</navigator>
+
+<!--说明栏目  -->
+<view class="">
+
+    <image style="display:block;width:750rpx;height:651rpx;margin:0 auto" src='https://static.yidap.com/miniapp/active-info.png'></image>
+
+</view>

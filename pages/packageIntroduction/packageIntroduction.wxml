@@ -1,0 +1,29 @@
+<view class="more-banner">
+    <image src='https://static.yidap.com/miniapp/packageIntroduction/package-banner.png'></image>
+</view>
+
+<!--套餐优惠  -->
+<view>
+
+    <view class="bold-600 fs34 text-center lh110">会员特权介绍</view>
+    <view class="section-title flex flex-end">
+
+        <view wx:for="{{['包月会员','按次会员','普通会员']}}" wx:key="{{i}}" class="{{currentIndex === index ? 'select' : ''}}" data-index="{{index}}" bindtap='selectPage'>
+            {{item}}
+        </view>
+
+    </view>
+
+    <swiper circular="{{false}}" class="text-center" current="{{currentIndex}}" bindchange="slider" style='height:842rpx;padding-bottom:150rpx;'>
+        <block wx:for="{{cmUrls}}" wx:key="{{i}}">
+            <swiper-item item-id="{{index}}">
+                <image style='display:block;width:700rpx;height:842rpx;margin:0 auto;' mode='widthFix' src="{{item}}" />
+            </swiper-item>
+        </block>
+    </swiper>
+
+</view>
+
+<view class="become-member fs30">
+    <button bindtap='becomeMember'>成为小鹿快找会员</button>
+</view>

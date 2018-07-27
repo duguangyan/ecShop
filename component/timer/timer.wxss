@@ -1,0 +1,24 @@
+.timer-box {
+    display: flex;
+    align-items: center;
+    width: 210rpx;
+    height: 42rpx;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    line-height: 42rpx;
+    color: #fff;
+}
+
+/*奇数  */
+
+.timer-box view:nth-of-type(2n+1) {
+    width: 42rpx;
+    height: 42rpx;
+}
+
+.timer-box view:nth-of-type(2n) {
+    width: 28rpx;
+    height: 42rpx;
+    background: transparent;
+    font-size: 20rpx;
+}

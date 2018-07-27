@@ -1,0 +1,86 @@
+<view>
+    <image mode='widthFix' bindtap='close' class="poster poster-1" src='{{itemInfo.sku.img1}}'></image>
+
+    <view class="text-center bg-color">
+        <view class="text-white fs28 limited-time hidden">活动时间：{{itemInfo.beginData}}--{{itemInfo.endData}}</view>
+
+        <view hidden='{{itemInfo.isActiveEnd}}' class="flex flex-center limited-box">
+
+            <view class="bold-600">抢购仅剩:
+                <text class="u">{{itemInfo.last_stock}}</text>卷</view>
+
+            <button bindtap='show'>立即抢购</button>
+
+        </view>
+
+        <view hidden='{{!itemInfo.isActiveEnd}}' class="limited-end">
+            {{itemInfo.isActiveTimeEnd}}
+        </view>
+
+    </view>
+
+    <view class="relative">
+        <view bindtap='goodsInfo' class="go-detail"></view>
+        <image mode='widthFix' class="poster poster-2" src='{{itemInfo.sku.img2}}'></image>
+        <view bindtap='contact' class="call-phone"></view>
+    </view>
+    <!-- <view class="phone">电话拨打</view> -->
+</view>
+
+
+
+
+<view class="purchase-box {{isShow ? 'slide-up' : 'slide-down'}}" catchtouchmove="preventD">
+
+    <!--商品信息  -->
+
+    <view class='item-info-box flex flex-start relative'>
+
+        <view bindtap='goodsInfo'>
+            <image style="width:250rpx;height:250rpx;background:#fefefe;" src='{{itemInfo.sku.img3}}'></image>
+        </view>
+
+        <view class="fs30">
+            <view class="theme-color"> {{'￥' +itemInfo.detail.sku[0].shop_price + '/卷'}}</view>
+            <view>
+                库存{{itemInfo.last_stock}} 卷
+            </view>
+        </view>
+
+        <view bindtap='close' class="close-box">
+            <text class="iconfont icon-chacha fs50 text-gray"></text>
+        </view>
+    </view>
+
+    <!--地址信息  -->
+    <view bindtap='dealAddress' data-url="{{defaultAddress? '../consigneeAddress/consigneeAddress' : '../newAddress/newAddress?type=new'}}" class="flex pd-30 address-box">
+        <text class="iconfont icon-genggaishouhuodizhi fs50 text-gray mgr-14"></text>
+        <view hidden="{{!defaultAddress}}" class="flex-1 fs30">{{defaultAddress.city_str}} {{defaultAddress.address}}</view>
+        <view hidden="{{defaultAddress}}" class="flex-1 fs30">点击添加收货地址</view>
+        <text class="iconfont icon-jiantou fs40 text-gray"></text>
+    </view>
+
+    <!--数量按钮  -->
+    <view class="flex pd-30 mgt-60">
+        <view class='fs30 bold'>购买数量
+             <!-- <text class="fs24">（5卷起购，仅限狮岭镇用户参与）</text>  -->
+         </view>
+        <view class="flex fs50 num-box">
+            <view bindtap='min'>-</view>
+            <input class="fs40" type='number' value='{{purchaseNum}}' maxlength='3' bindblur='change'></input>
+            <view bindtap='add'>+</view>
+        </view>
+    </view>
+     <view class="pdr-30 fs24 text-right text-999">（5卷起购，仅限狮岭镇用户参与）</view> 
+
+    <view bindtap='goodsInfo' class="fs30 pd-30 flex">
+        <text>商品详情</text>
+        <text class="iconfont icon-jiantou text-gray"></text>
+    </view>
+
+
+    <!--抢购按钮  -->
+    <view class="pd-30 purchase-btn">
+        <button bindtap='purchase' class="{{submitBtn ? 'disabled-c' : ''}}">立即抢购</button>
+    </view>
+</view>

@@ -1,0 +1,118 @@
+<view class="container">
+
+    <view class="order-address-box">
+
+        <view bindtap='orderAddEdit' hover-class="hover-click" wx:if="{{defaultAddress}}" class="flex order-address-detail">
+            <text class="iconfont icon-dizhi fs40 text-gray mgr-14"></text>
+            <view class="order-address-info">
+                <view>
+                    <text class="fs32 bold mgr-56" style="line-height:80rpx;">{{defaultAddress.consignee}}</text>
+                    <text class='bold fs26'>{{defaultAddress.mobile}}</text>
+                </view>
+                <view class="bold address fs26">
+                    <text>{{defaultAddress.city_str}}</text>
+                    <text> {{defaultAddress.address}} </text>
+                </view>
+            </view>
+            <text class="iconfont icon-jiantou bold text-gray fs30"></text>
+        </view>
+        <!--没有默认收货地址  -->
+        <view bindtap='addOrderAdd' hover-class="hover-click" class="no-address flex" wx:if="{{!defaultAddress}}">
+            <text class="bold">您的收货地址为空，点此添加收货地址</text>
+            <text class="iconfont icon-jiantou bold text-gray fs26"></text>
+        </view>
+
+    </view>
+
+    <!--条纹条幅  -->
+    <view>
+        <image style="dispaly:block;height:6rpx;width:750rpx;" src='../../images/order_address_bg.png'></image>
+    </view>
+
+    <view class="h24 spacing-bg"></view>
+
+    <block wx:for="{{orderList}}" wx:key="*this">
+
+        <view class='border-top'>
+            <view class="order-provider fs30  cell-padding border-bottom">{{item.shop_name}}</view>
+            <view class='order-list flex'>
+                <scroll-view scroll-x='true'>
+
+                    <block wx:for="{{item.skus}}" wx:for-item="itemImg" wx:key="*this">
+                        <image  src="{{itemImg.goods_img_url}}"></image>
+                    </block>
+
+                </scroll-view>
+
+                <navigator open-type='navigate' url='../orderList/orderList?orderid={{cart_ids}}&index={{index}}&totle={{item.totle}}' class="flex-1 text-right">
+
+                    <text class="bold fs28">共 {{item.totle}} 件</text>
+                    <text class="iconfont icon-jiantou bold text-gray fs24"></text>
+
+                </navigator>
+
+
+            </view>
+        </view>
+
+        <view class="h24 spacing-bg"></view>
+
+    </block>
+
+    <view class="border-top">
+
+
+        <navigator>
+            <view class="nav-box cell-padding border-bottom flex text-333 fs30 lh80">
+                <view class="">支付方式</view>
+                <view >
+                   <image mode='widthFix' src="../../images/icons/wx_pay.png" ></image>
+                    <text >微信支付</text>
+                    <text class="iconfont icon-jiantou bold fs24 transparent"></text>
+                </view>
+            </view>
+        </navigator>
+
+        <navigator>
+            <view class="nav-box cell-padding border-bottom flex text-333 fs30 lh80">
+                <view class="">运费</view>
+                <view style="">
+                    <text>到付</text>
+                    <text class="iconfont icon-jiantou bold fs24  transparent"></text>
+                </view>
+            </view>
+        </navigator>
+
+        <navigator open-type='navigate' url="../invoiceInfo/invoiceInfo">
+            <view class="nav-box cell-padding border-bottom flex text-333 fs30 lh80">
+                <view class="">发票</view>
+                <view style="">
+                    <text>{{invoiceData.inv_payee === '个人' ? '个人' : '公司' }}</text>
+                    <text class="iconfont icon-jiantou bold fs24 text-gray"></text>
+                </view>
+            </view>
+        </navigator>
+        <view class="cell-padding">
+
+            <input bindinput='postScript' style="height:120rpx;" placeholder-style="fs26" placeholder='给卖家留言'>
+            </input>
+
+        </view>
+
+    </view>
+
+    <view class="h24 spacing-bg"></view>
+
+    <view class="flex order-price-totle">
+        <view class="text-gray">商品金额</view>
+        <view class="bold text-theme fs30">{{totlePrice ? '￥' + totlePrice : ''}}</view>
+    </view>
+
+    <view class="bottom-fixed flex submit-order border-top bold">
+        <view class="text-gray fs30">
+            <text>应付总额(不含运费):</text>
+            <text class="text-theme pdlr-30">{{totlePrice ? '￥' + totlePrice : ''}}</text>
+        </view>
+        <view bindtap='submitOrder' class="submit-btn u bg-theme" hover-class="hover-style">提交订单</view>
+    </view>
+</view>

@@ -1,0 +1,48 @@
+<view class="fs30">
+
+    <view class="flex pd-20">
+        <text>{{firmInfo.name}}</text>
+         <text wx:if="{{firmInfo.mounth !== 'null'}}">有效期： {{firmInfo.mounth}}个月</text> 
+    </view>
+
+    <view class="bg h20"></view>
+
+    <navigator hidden="{{demandPrice == 0}}" open-type='navigate' url="../invoiceInfo/invoiceInfo">
+        <view class="lh80 cell-padding flex text-333 fs30">
+            <view class="">发票</view>
+            <view style="">
+                <text>{{invoiceData.inv_payee === '个人' ? '个人' : '公司' }}</text>
+                <text class="iconfont icon-jiantou bold mgl-20 fs24 text-gray"></text>
+            </view>
+        </view>
+    </navigator>
+
+
+    <view class="bg h20"></view>
+
+    <view class="border-bottom">
+
+        <view class="flex pd-20">
+            <text>套餐费用</text>
+            <text>{{firmInfo.packagePrice ? '￥'+ firmInfo.packagePrice : ''}}</text>
+        </view>
+
+        <view wx:if="{{firmInfo.servicePrice}}" class="flex pd-20">
+            <text>配送费用</text>
+            <text>{{firmInfo.servicePrice ? '￥'+ firmInfo.servicePrice : ''}}</text>
+        </view>
+
+    </view>
+
+    <view class="border-bottom pd-20 flex flex-end">
+        <view>
+            <text>实际支付：</text>
+            <text class="text-theme">{{firmInfo.totle ? '￥' + firmInfo.totle : ''}}</text>
+        </view>
+    </view>
+
+</view>
+
+<view bindtap='submitOrder'  hover-class="hover-style" class="bottom-fixed text-center text-white h100 lh100 fs32 {{ hasSubmit ? 'disabled-c' : ''}}">
+    提交订单
+</view>

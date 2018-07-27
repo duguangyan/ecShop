@@ -1,0 +1,12 @@
+<form report-submit bindsubmit>
+    <view class="form-style fs30">
+
+        <view class="mgb-20 bold-600">请提出您的宝贵意见</view>
+        <textarea class="textarea" placeholder='欢迎反馈，我们将为您不断改进'></textarea>
+
+    </view>
+    <view class="text-666 lh80 mgl-20">我们会及时处理您的反馈，并第一时间给您回复</view>
+
+    <button formType="submit" loading="{{false}}" hover-class='hover-style' class="send-btn">发送</button>
+
+</form>

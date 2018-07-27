@@ -1,0 +1,13 @@
+.shop-btn {
+    width: 320rpx;
+    background: #c81a29;
+    color: #fff;
+    font-size: 30rpx;
+}
+
+.order-btn {
+    width: 320rpx;
+    background: #fefefe;
+    font-size: 30rpx;
+    /* border: 1rpx #666 solid; */
+}

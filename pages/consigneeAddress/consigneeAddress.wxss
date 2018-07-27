@@ -1,0 +1,38 @@
+page {
+    background: #F5F5F5;
+    padding-bottom: 100rpx;
+}
+
+.no-address {
+  padding-top: 250rpx;
+    
+}
+
+.no-address-text  {
+    margin: 120rpx 0 30rpx;
+}
+
+.address-item {
+    background: #FFF;
+    padding: 0rpx 20rpx 0rpx 34rpx;
+    border-top: 1rpx #DDD solid;
+    border-bottom: 1rpx #DDD solid;
+    margin-bottom: 20rpx;
+}
+
+.address-item:first-of-type {
+    border-top: 0;
+}
+
+.address-item-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-right: 90rpx;
+    padding-bottom: 30rpx;
+}
+
+.address-item-detail {
+    
+}

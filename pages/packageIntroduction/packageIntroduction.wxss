@@ -1,0 +1,48 @@
+.more-banner {
+    width: 750rpx;
+    height: 624rpx;
+}
+
+.more-banner image {
+    display: block;
+    width: 750rpx;
+    height: 624rpx;
+}
+
+.section-title {
+    padding: 0 25rpx;
+}
+
+.section-title view{
+    width: 166rpx;
+    font-size: 24rpx;
+    color:#FFF;
+    background: #CCC;
+    text-align: center;
+    line-height: 50rpx;
+    border-top-right-radius: 14rpx;
+    border-top-left-radius: 14rpx;
+}
+
+.section-title .select{
+    background: #CD313F;
+}
+
+/*底部按钮  */
+.become-member {
+    position:fixed;
+    left: 0;
+    bottom: 0;
+    width: 750rpx;
+    padding: 14rpx 0;
+    background: #F2F2F2;
+}
+
+.become-member button{
+    width: 700rpx;
+    
+    font-size: 30rpx;
+    background: #C91A29;
+    color: #FFF;
+}
+

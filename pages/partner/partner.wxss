@@ -1,0 +1,16 @@
+.partner {
+
+}
+
+.partner image {
+    width: 750rpx;
+    margin-bottom: 24rpx;
+}
+
+.partner image:nth-of-type(2) {
+ width: 706rpx;
+}
+
+.partner image:nth-of-type(4) {
+    width: 703rpx;
+}

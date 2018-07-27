@@ -1,0 +1,25 @@
+<view class="section-personal fs30">
+    <view bindtap="chooseImage" class="avatar flex border-bottom">
+        <text>头像</text>
+        <image mode='widthFix' src="{{memberInfo.avatar_url || '../../images/icons/default_avatar.png'}}"></image>
+    </view>
+
+     <view class="flex border-bottom">
+        <text>昵称</text>
+        <input placeholder='请设置昵称' value="{{memberInfo.nick_name}}"></input>
+    </view>
+
+     <view class="flex ">
+        <text>性别</text>
+        <view>
+            <picker bindchange="bindPickerChange" range='{{region}}' value='{{index}}'>
+                <view>{{region[index]}}</view>
+            </picker>
+        </view>
+    </view>
+
+     <!-- <view class="flex" bindtap='test'>
+        测试选择
+    </view>  -->
+
+</view>

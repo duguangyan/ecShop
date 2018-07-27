@@ -1,0 +1,40 @@
+.main-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100rpx;
+    height: 100rpx;
+    transform: translate(-50%, -50%);
+    z-index: 99999;
+}
+
+.main-loading > image {
+     width: 100rpx;
+    height: 100rpx;
+    -webkit-animation: e 1s steps(12) infinite;
+    animation: e 1s steps(12) infinite;
+}
+
+@-webkit-keyframes e {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes e {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn);
+    }
+}

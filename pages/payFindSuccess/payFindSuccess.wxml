@@ -1,0 +1,52 @@
+<view class="text-center flex flex-center" style="padding:100rpx 0;">
+    <icon class="" type="success" size="{{'65'}}" />
+
+    <view class="mgl-20 text-left">
+
+        <view class="fs50 bold lh50 ">{{membertype ? '提交' : '支付'}}成功</view>
+        <view class="lh50 text-666 mgt-20">
+
+            <text>{{info.created_at}}</text>
+        </view>
+
+    </view>
+</view>
+
+<view class="bg h20"></view>
+
+<view class="">
+    <view class="cell-padding lh80 border-bottom">
+        <text>订单编号：</text>
+        <text>{{info.id}}</text>
+    </view>
+    <!--订单详情  -->
+    <import src="../../component/mySearchOrderItem/mySearchOrderItem.wxml" />
+
+    <template is="mySearchOrderItem" data="{{...info}}" />
+
+    <view class="flex cell-padding lh80 text-666 border-top">
+        <view>原价： ￥50.00</view>
+        <view>
+            <text>实际支付价格:</text>
+            <text class="text-theme">{{info ? '￥'+ info.pay_fee : ''}}</text>
+        </view>
+    </view>
+</view>
+
+<view class="bg h20"></view>
+
+<!--充值套餐  -->
+<navigator class='go-recharge' open-type='reLaunch' url="../index/index?redict=recharge">
+
+
+
+</navigator>
+
+
+<view class="bg h20"></view>
+<!--宣传海报 {{membertype ? '提交' : '支付'}}  -->
+
+<view class="flex mgt-60">
+    <button hover-class='hover-style' bindtap='continueShopping' class="shop-btn">返回首页</button>
+    <button hover-class='hover-style' bindtap='checkOrderDetail' class="order-btn text-666">查看订单详情</button>
+</view>

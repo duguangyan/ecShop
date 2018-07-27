@@ -1,0 +1,14 @@
+<view class="border-bottom text-center" style="padding:100rpx 0;">
+    <icon type="success" size="{{'90'}}" />
+
+    <view class="fs30 bold-600 lh50 mgt-28">您的订单已提交成功，请耐心等待商家确认订单</view>
+    <view class="lh50 text-666">
+        <text>订单编号：</text>
+        <text>{{sn}}</text> 
+    </view>
+</view>
+
+<view class="flex mgt-60">
+    <button hover-class='hover-style' bindtap='continueShopping' class="shop-btn">返回首页</button>
+    <button hover-class='hover-style' bindtap='checkOrderDetail' class="order-btn text-666">查看订单详情</button>
+</view>

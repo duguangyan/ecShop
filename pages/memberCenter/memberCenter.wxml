@@ -1,0 +1,120 @@
+<view class="section-avatar flex flex-start">
+
+    <view class="avatar">
+        <image src="{{memberInfo.avatar_url || '../../images/icons/default_avatar.png'}}"></image>
+    </view>
+
+    <view class="member-info text-left bold">
+        <view wx:if="{{memberInfo}}">
+            <view class="fs26 bold ">
+                <text class="fs30 bold-600" style="color:#e0001A;">{{memberInfo.user_name}}</text>
+                <text hidden="{{true}}" bindtap='modifyInfo' class="iconfont icon-shouhuodizhiyebianji bold-600 fs34 pd-20"></text>
+            </view>
+            <!-- <view class="mgt-20 fs24">
+                <view wx:if="{{memberInfo.is_find_vip === 0}}">
+                    <text class="iconfont icon-diamonds mgr-10 text-666"></text>
+                    <text class="text-666">普通用户</text>
+                </view>
+
+                <view wx:if="{{memberInfo.is_find_vip === 1}}">
+                    <text class="iconfont icon-diamonds mgr-10 zuanshi"></text>
+                    <text class="text-theme">套餐用户</text>
+                </view>
+            
+            </view> -->
+        </view>
+        <navigator style="padding:20rpx 0" open-type='navigate' url="../associatedAccount/associatedAccount" hidden='{{memberInfo}}' class="fs32 bold">您暂未登录（点击登录）</navigator>
+    </view>
+
+    <view wx:if="{{memberInfo}}" class="setting hidden">
+        <navigator open-type='navigate' url="../accountManagement/accountManagement">
+            <image src="{{'../../images/icons/setting.png'}}"></image>
+        </navigator>
+    </view>
+
+    <view bindtap='memberService' data-type="open" wx:if="{{memberInfo.is_find_vip === 0}}" hover-class='hover-style' class="fs30 radius-10 member-service-btn hidden">
+        开通会员
+    </view>
+
+    <view bindtap='memberService' data-type="renewal" wx:if="{{memberInfo.is_find_vip === 1}}" hover-class='hover-style' class="fs30 radius-10 member-service-btn hidden">
+        续费会员
+    </view>
+</view>
+
+<view class="'bg h20'"></view>
+
+<view class="section-order">
+    <view class="my-order-line flex">
+        <view class="fs30">我的商品订单</view>
+        <view bindtap='toMyOrder' data-id="0" hover-class='hover-click' class="text-999 lh80">
+            <text>查看全部商品订单</text>
+            <text class="iconfont icon-jiantou1 "></text>
+        </view>
+    </view>
+
+
+    <view class="flex flex-start">
+
+        <view bindtap='toMyOrder' data-id="{{item.id}}" class="item" wx:for="{{orderTab}}" wx:key="{{i}}">
+            <image mode='aspectFit' src='../../images/icons/member_order{{item.id}}.png'></image>
+            <text>{{item.name}}</text>
+        </view>
+
+
+    </view>
+</view>
+
+<view class="section-service mgt-20 bold ">
+
+    <navigator class="item" target="miniProgram" open-type='navigate' app-id="wx95dd0020bb2c868f" path="pages/index/index">
+        <image mode='aspectFit' src='../../images/icons/member_service1.png'></image>
+        <text>我的找料</text>
+    </navigator>
+
+    <navigator bindtap='developing' class="item">
+        <image mode='aspectFit' src='../../images/icons/member_service2.png'></image>
+        <text>我的索样</text>
+    </navigator>
+
+    <view class="item" bindtap='collatingTickets' hover-class='hover-click'>
+        <image mode='aspectFit' src='../../images/icons/member_service4.png'></image>
+        <text>发票抬头</text>
+    </view>
+    <!-- 
+    <navigator class="item" open-type='navigate' url='../packageIntroduction/packageIntroduction'>
+        <image mode='aspectFit' src='../../images/icons/member_service10.png'></image>
+        <text>套餐特权</text>
+    </navigator>
+
+    <navigator class="item" open-type='navigate' url='../myPackage/myPackage'>
+        <image mode='aspectFit' src='../../images/icons/member_service3.png'></image>
+        <text>我的套餐</text>
+    </navigator> -->
+
+    <navigator open-type='navigate' url="../consigneeAddress/consigneeAddress" class="item">
+        <image mode='aspectFit' src='../../images/icons/member_service6.png'></image>
+        <text>收货地址</text>
+    </navigator>
+
+    <navigator bindtap='developing' class="item">
+        <image mode='aspectFit' src='../../images/icons/member_service5.png'></image>
+        <text>收藏</text>
+    </navigator>
+
+    <navigator class="item">
+        <image mode='aspectFit' src='../../images/icons/member_service8.png'></image>
+        <text>帮助</text>
+    </navigator>
+
+    <view class="item relative">
+        <button open-type="contact" class="contact-btn"> </button>
+        <image mode='aspectFit' src='../../images/icons/member_service7.png'></image>
+        <text>客服</text>
+    </view>
+
+    <!-- <navigator class="item">
+        <image mode='aspectFit' src='../../images/icons/member_service9.png'></image>
+        <text>意见反馈</text>
+    </navigator> -->
+
+</view>

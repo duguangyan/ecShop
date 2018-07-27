@@ -1,0 +1,132 @@
+.search-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24rpx 20rpx;
+}
+
+.search-box .search-input-box {
+    flex: 1;
+    box-sizing: border-box;
+    margin-right: 18rpx;
+    padding-left: 60rpx;
+    border: 1rpx #666 solid;
+    border-radius: 10rpx;
+    background: #fff url(https://static.yidap.com/miniapp/search.png) no-repeat 20rpx center;
+    background-size: 30rpx 30rpx;
+}
+
+.search-input-box input {
+    height: 70rpx;
+}
+
+.search-box .search-input-btn {
+    width: 90rpx;
+    height: 70rpx;
+    border-radius: 10rpx;
+    background: #C81A29;
+    color: #fff;
+    font-size: 30rpx;
+    text-align: center;
+    line-height: 70rpx;
+}
+
+/*筛选栏目  */
+
+.filter-section {
+    display: flex;
+}
+
+.filter-section>view {
+    flex: 1;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+}
+
+/* .filter-section>view:last-of-type {
+    border-right: 0;
+} */
+
+/* .filter-section>view:first-of-type {
+    border-left: 0;
+} */
+
+.filter-section .filter-price {
+    box-sizing: content-box;
+    /* border-left: 1rpx #ddd solid;
+    border-right: 1rpx #ddd solid; */
+}
+
+.filter-selected {
+    color: #C81A29;
+    /* text-decoration: underline; */
+}
+
+.filter-tags-list {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 20rpx 20rpx 0;
+}
+
+.filter-tags-list .filter-tag {
+    margin: 0 20rpx 20rpx 0;
+    padding: 12rpx 14rpx;
+    border-radius: 10rpx;
+    color: #fff;
+    background: #C81A29;
+}
+
+/*商品列表  */
+
+.goods-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 10rpx;
+}
+
+.goods-list .goods-list-item {
+    width: 371rpx;
+    border-radius: 10rpx;
+    margin-bottom: 10rpx;
+    box-shadow: 0 5rpx 15rpx #ccc;
+}
+
+.goods-list .goods-list-item .gooods-img-box > image {
+    width: 100%;
+    height: 370rpx;
+}
+
+.goods-list .goods-list-item .goods-info-box {
+    padding: 0 20rpx;
+}
+
+.goods-list .goods-list-item .goods-info-box .goods-title {
+    height: 74rpx;
+    padding: 12rpx 28rpx 10rpx 0;
+    line-height: 40rpx;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.goods-list .goods-list-item .goods-info-box .good-price {
+    display: flex;
+    justify-content: space-between;
+    line-height: 64rpx;
+    border-top: 1px #ddd dotted;
+}
+
+/*加载框  */
+
+.loading {
+    padding: 10rpx;
+    text-align: center;
+    font-size: 28rpx;
+    color: #bbb;
+}

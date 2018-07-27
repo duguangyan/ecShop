@@ -1,0 +1,30 @@
+<view class='container'>
+
+    <form>
+        <view class="login-box fs30">
+
+            <view class="border-bottom input-box">
+                <text class="bold mgr-34">账号</text>
+                <input bindinput='mobile' maxlength='11' type="number" placeholder='用户名/手机号' placeholder-class='fs30 text-999' value="{{initialNum}}"></input>
+                <text bindtap='delAccountNum' hidden="{{!isDel}}" class="iconfont icon-chahao fs40 text-999"></text>
+            </view>
+
+            <view class="border-bottom input-box">
+                <text class="bold mgr-34">密码</text>
+                <input bindinput='password' password="{{!visiblePWD}}" maxlength='20' placeholder="请输入密码" placeholder-class='fs30 text-999'></input>
+                <text bindtap='isVisible' class="iconfont {{visiblePWD ? 'icon-yj': 'icon-bukejian'}} fs40 text-999"></text>
+            </view>
+        </view>
+
+        <view class="cell-padding">
+            <button bindtap='submitLogin' class="login-btn bg-theme {{ BtnActive ?  '' : 'disabled-style' }}">登录</button>
+        </view>
+
+    </form>
+
+    <view class="flex cell-padding-40 fs28">
+        <navigator open-type='navigate' url="../register/register">手机快速注册</navigator>
+        <navigator open-type='navigate' url="../resetPassword/resetPassword">忘记密码</navigator>
+    </view>
+
+</view>

@@ -1,0 +1,119 @@
+.order-box {
+    padding-bottom: 80rpx;
+}
+
+.orderStatus {
+    height: 130rpx;
+}
+
+.order-number  {
+    height: 78rpx;
+    justify-content: space-between;
+}
+
+.order-number-l {
+
+}
+
+.consignee-box {
+    min-height: 160rpx;
+}
+
+.consignee-box-info {
+    flex: 1;
+    padding:10rpx 80rpx 10rpx 4rpx;
+    line-height: 48rpx;
+}
+
+.consignee-box-name {
+    justify-content: space-between;
+}
+
+.order-number-copy {
+   padding: 10rpx 24rpx;
+}
+
+.corporate-name {
+    padding-top: 20rpx;
+    line-height: 40rpx;
+}
+
+/*展示商品模块 S  */
+
+.goods-info {
+    padding: 20rpx 30rpx 22rpx 30rpx;
+}
+
+.goods-info image {
+    display: block;
+    width: 170rpx;
+    height: 170rpx;
+    margin-right: 20rpx;
+    border-radius: 10rpx;
+}
+
+.goods-info-text {
+    flex: 1;
+    min-height: 170rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.goods-tag {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 24rpx;
+}
+
+/*展示商品模块 E  */
+
+.goods-bill-type {
+    padding:24rpx 20rpx;
+     border-bottom: 1rpx #EDEDED solid;
+}
+
+.goods-bill-list {
+    padding: 24rpx 20rpx 32rpx;
+    border-bottom: 1rpx #EDEDED solid;
+}
+
+.goods-bill-list>view,.goods-order-time>view {
+    display: flex;
+    justify-content: space-between;
+}
+
+.goods-order-time {
+    padding: 14rpx 20rpx 80rpx;
+    border-bottom: 2rpx #E0E0E0 solid；
+}
+
+/*底部支付  */
+.payment-choice {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100rpx;
+    background: #FFF;
+    border-top: 2rpx #E5E5E3 solid;
+}
+.payment-choice view {
+    margin-right: 20rpx;
+    width: 150rpx;
+    height: 54rpx;
+    background: #FFF;
+    text-align: center;
+    line-height: 54rpx;
+    border: 1rpx #BABABA solid;
+    border-radius: 10rpx;
+}
+
+.payment-choice .cancel{
+
+}
+
+.payment-choice .pay {
+    border: 1rpx #C81A29 solid;
+}
+
+

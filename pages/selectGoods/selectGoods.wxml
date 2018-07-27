@@ -1,0 +1,95 @@
+<view class="container">
+
+    <view>
+        <image style="height:220rpx;width:100%;" src='http://placeholder.qiniudn.com/750x220/cbced1/218edb/'></image>
+    </view>
+
+    <view class="select-goods-info border-bottom">
+
+        <view class="box-l">
+            <view>
+                <image style="width:220rpx;;height:220rpx;" src='http://placeholder.qiniudn.com/220x220/cbced1/218edb/'></image>
+
+            </view>
+
+            <view class="goods-text ">
+                <view class='ellipsis-line4 fs28 lh40'>PU环保袋适合用于华为等行业，1.2mmm适用于箱包手袋用适用于箱包 于箱包手袋用适用于箱包于箱包手袋用适用于箱包手袋
+                </view>
+                <view class="fs28 text-theme lh60">$213.6345-34534</view>
+            </view>
+
+        </view>
+
+        <view>
+            <text class="iconfont icon-chacha fs46 text-gray"></text>
+        </view>
+
+    </view>
+
+
+    <view>
+        <view class="option-title fs28">
+            颜色
+        </view>
+
+        <view class="option-item-box flex">
+            <view>黑色</view>
+
+            <view>白色</view>
+
+        </view>
+
+    </view>
+
+    <view>
+        <view class="option-title fs28">
+            颜色
+        </view>
+
+        <view class="option-item-box flex fs26">
+            <view class="selected">黑色</view>
+
+            <view>白色</view>
+
+        </view>
+
+    </view>
+
+
+    <view class="border-bottom">
+        <view class="option-title fs28">
+            型号
+        </view>
+
+
+        <block wx:for="{{[1,3,4]}}">
+            <view class="cell-padding ">
+
+                <view class="border-bottom item-line bold flex">
+                    <view>95#</view>
+
+                
+                    <view class="border flex input-btn">
+                        <text class="iconfont icon-jian1 fs26"></text>
+                        <input value='0'></input>
+                        <text class="iconfont icon-jia1 fs26"></text>
+                    </view>
+
+                    <view class="text-theme w200 text-center">$289.56</view>
+                    <view class="bg-theme .radius-10 add-cart">
+                        <text class="iconfont icon-gouwuchekong fs38 text-white"></text>
+                    </view>
+
+                </view>
+            </view>
+        </block>
+    </view>
+
+
+
+
+</view>
+
+<view class="bottom-fixed confirm-btn">
+    确定
+</view>

@@ -1,0 +1,10 @@
+/*加载框  */
+
+.loading {
+    padding: 10rpx;
+    border-top: 1rpx #ddd dotted;
+    text-align: center;
+    font-size: 28rpx;
+    color: #bbb;
+   
+}

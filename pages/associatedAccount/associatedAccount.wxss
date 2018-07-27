@@ -1,0 +1,51 @@
+page {
+    background: #f0f0f0;
+    overflow: hidden;
+}
+
+.input-box {
+    height: 90rpx;
+    display: flex;
+    align-items: center;
+    background: #fff;
+}
+
+.input-box > input {
+    flex:1;
+}
+
+.input-box>view {
+    width: 280rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    border-left: 1rpx #dcdcdc solid;
+}
+
+
+.set-pwd input {
+    width: 475rpx;
+}
+
+.service-agreement {
+    padding: 28rpx 0 30rpx 26rpx;
+}
+
+.submit-btn {
+    margin: 0 26rpx;
+}
+
+.submit-btn-member {
+    margin-top: 60rpx;
+}
+
+.contact-btn {
+    display: inline;
+    font-size: 30rpx;
+    background: #f0f0f0;
+}
+
+.contact-btn::after {
+    border: none;
+}
+
